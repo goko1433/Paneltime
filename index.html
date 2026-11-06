@@ -10,39 +10,34 @@
 <style>
 :root {
  --bg:#f5f5f5;
- --white:#ffffff;
+ --white:#fff;
  --purple:#b04ba5;
  --purple-light:#dfc1dc;
  --text:#707070;
- --muted:#999999;
- --line:#eeeeee;
+ --muted:#999;
+ --line:#eee;
  --green:#54b98a;
  --red:#df7777;
  --blue:#27a8e8;
 }
 
-* {box-sizing:border-box}
+*{box-sizing:border-box}
 
-body {
+body{
  margin:0;
  padding:env(safe-area-inset-top) 0 calc(25px + env(safe-area-inset-bottom));
  background:var(--bg);
  color:var(--text);
  font-family:"Roboto Condensed","Arial Narrow",Arial,sans-serif;
- font-size:14px;
- font-weight:400;
+ font-size:13px;
  -webkit-font-smoothing:antialiased;
 }
 
-button,input,select {font:inherit}
+button,input,select{font:inherit}
 
-.wrap {
- max-width:850px;
- margin:auto;
- padding:0 12px;
-}
+.wrap{max-width:850px;margin:auto;padding:0 12px}
 
-.top {
+.top{
  height:66px;
  display:flex;
  justify-content:space-between;
@@ -50,35 +45,25 @@ button,input,select {font:inherit}
  padding:0 5px;
 }
 
-.brand {
+.brand{
  font-size:20px;
  font-weight:700;
  color:var(--purple);
  letter-spacing:.3px;
 }
 
-.brand span {color:#777}
+.brand span{color:#777}
 
-.clock {
- text-align:right;
- font-size:11px;
- color:#888;
- line-height:1.5;
-}
+.clock{text-align:right;font-size:11px;color:#888;line-height:1.5}
 
-.colorline {
- height:5px;
- display:flex;
- margin-bottom:18px;
-}
-
-.colorline span {flex:1}
+.colorline{height:5px;display:flex;margin-bottom:18px}
+.colorline span{flex:1}
 .colorline span:nth-child(1){background:#b04ba5}
 .colorline span:nth-child(2){background:#ff9b16}
 .colorline span:nth-child(3){background:#8bc934}
 .colorline span:nth-child(4){background:#21a8e5}
 
-.ticker {
+.ticker{
  background:white;
  border-radius:9px;
  padding:12px 15px;
@@ -88,47 +73,31 @@ button,input,select {font:inherit}
  align-items:center;
 }
 
-.ticker small {
- font-size:11px;
- color:#999;
-}
+.ticker small{font-size:10px;color:#999}
+.ticker strong{display:block;font-size:18px;margin-top:3px;color:#666}
 
-.ticker strong {
- display:block;
- font-size:18px;
- font-weight:600;
- margin-top:3px;
- color:#666;
-}
-
-.status {
+.status{
  font-size:10px;
  padding:5px 8px;
  border-radius:15px;
  border:1px solid #ddd;
 }
 
-.ok {color:#42a87d;border-color:#9bd9bd}
-.bad {color:#d47777;border-color:#e6b5b5}
+.ok{color:#42a87d;border-color:#9bd9bd}
+.bad{color:#d47777;border-color:#e6b5b5}
 
-.grid {
- display:grid;
- grid-template-columns:repeat(12,1fr);
- gap:12px;
-}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:12px}
+.span12{grid-column:span 12}
+.span6{grid-column:span 6}
+.span4{grid-column:span 4}
 
-.span12 {grid-column:span 12}
-.span6 {grid-column:span 6}
-.span4 {grid-column:span 4}
-
-.card {
+.card{
  background:white;
  border-radius:10px;
- margin-bottom:0;
  overflow:hidden;
 }
 
-.card-head {
+.card-head{
  min-height:53px;
  display:flex;
  justify-content:space-between;
@@ -137,62 +106,24 @@ button,input,select {font:inherit}
  border-bottom:5px solid var(--bg);
 }
 
-.section {
- font-size:16px;
- font-weight:700;
- color:var(--purple);
- margin:0;
-}
+.section{font-size:15px;font-weight:700;color:var(--purple);margin:0}
+.head-value{font-size:17px;font-weight:700;color:#707070;text-align:right}
+.arrow{color:var(--purple-light);font-size:23px;margin-left:5px}
 
-.head-value {
- font-size:18px;
- font-weight:700;
- color:#707070;
- text-align:right;
-}
+.card-body{padding:8px 15px 12px}
 
-.arrow {
- color:var(--purple-light);
- font-size:23px;
- margin-left:5px;
-}
-
-.card-body {padding:8px 15px 12px}
-
-.balance-row {
- min-height:49px;
+.balance-row{
+ min-height:43px;
  display:flex;
  align-items:center;
  justify-content:space-between;
  gap:10px;
- font-size:15px;
+ font-size:13px;
 }
 
-.balance-row strong {
- font-size:16px;
- font-weight:500;
- white-space:nowrap;
-}
+.balance-row strong{font-size:14px;font-weight:600;white-space:nowrap}
 
-.balance-row.primary-row strong {
- font-weight:700;
- color:#686868;
-}
-
-.big {
- font-size:27px;
- font-weight:600;
- color:#666;
- letter-spacing:-.5px;
-}
-
-.small {
- font-size:11px;
- color:#999;
- margin-top:3px;
-}
-
-.metrics {
+.metrics{
  display:grid;
  grid-template-columns:repeat(3,1fr);
  gap:8px;
@@ -200,46 +131,15 @@ button,input,select {font:inherit}
  border-top:5px solid var(--bg);
 }
 
-.metric {
- min-width:0;
- padding:5px 0;
-}
+.metric{min-width:0;padding:5px 0}
+.metric label{display:block;font-size:10px;color:#999;margin-bottom:6px}
+.metric b{font-size:13px;font-weight:600;overflow-wrap:anywhere}
+.metric small{display:block;font-size:10px;color:#aaa;margin-top:4px}
 
-.metric label {
- display:block;
- font-size:11px;
- color:#999;
- margin-bottom:6px;
-}
+.field{display:flex;flex-direction:column;gap:5px;flex:1;min-width:100px;margin-bottom:10px}
+.field label{font-size:11px;color:#888}
 
-.metric b {
- font-size:14px;
- font-weight:600;
- overflow-wrap:anywhere;
-}
-
-.metric small {
- display:block;
- font-size:10px;
- color:#aaa;
- margin-top:4px;
-}
-
-.field {
- display:flex;
- flex-direction:column;
- gap:5px;
- flex:1;
- min-width:100px;
- margin-bottom:10px;
-}
-
-.field label {
- font-size:11px;
- color:#888;
-}
-
-.field input,.field select {
+.field input,.field select{
  width:100%;
  min-width:0;
  background:#fafafa;
@@ -251,63 +151,32 @@ button,input,select {font:inherit}
  font-size:13px;
 }
 
-.field input:focus,.field select:focus {
- border-color:#c78ac0;
-}
+.field input:focus,.field select:focus{border-color:#c78ac0}
 
-.row {
- display:flex;
- gap:9px;
- flex-wrap:wrap;
-}
+.row{display:flex;gap:9px;flex-wrap:wrap}
 
-.btn {
+.btn{
  border:1px solid #e6d3e4;
  background:white;
  color:var(--purple);
  border-radius:6px;
  padding:9px 12px;
- font-size:12px;
+ font-size:11px;
  font-weight:600;
  cursor:pointer;
 }
 
-.primary {
- background:var(--purple);
- color:white;
- border-color:var(--purple);
-}
+.primary{background:var(--purple);color:white;border-color:var(--purple)}
+.good{color:#419c75;border-color:#b6dfcc}
+.danger{color:#c66e6e;border-color:#e7c3c3}
+.ghost{background:#f8f8f8}
+.btn:active{opacity:.7}
 
-.good {
- color:#419c75;
- border-color:#b6dfcc;
-}
+.notice{font-size:10px;line-height:1.5;color:#999;margin-top:10px}
 
-.danger {
- color:#c66e6e;
- border-color:#e7c3c3;
-}
+.list{display:flex;flex-direction:column}
 
-.ghost {
- background:#f8f8f8;
-}
-
-.btn:active {opacity:.7}
-
-.notice {
- font-size:11px;
- line-height:1.5;
- color:#999;
- margin-top:10px;
-}
-
-.list {
- display:flex;
- flex-direction:column;
- gap:0;
-}
-
-.item {
+.item{
  display:flex;
  justify-content:space-between;
  align-items:center;
@@ -316,93 +185,26 @@ button,input,select {font:inherit}
  border-bottom:1px solid #f0f0f0;
 }
 
-.item:last-child {border-bottom:0}
+.item:last-child{border-bottom:0}
+.name{font-size:13px;color:#666;font-weight:500;overflow-wrap:anywhere}
+.detail{font-size:10px;color:#aaa;margin-top:4px;line-height:1.5}
+.amount{text-align:right;font-size:13px;font-weight:600;white-space:nowrap}
+.actions{display:flex;justify-content:flex-end;gap:4px;flex-wrap:wrap;margin-top:6px}
+.mini{padding:5px 7px;font-size:10px}
 
-.name {
- font-size:14px;
- color:#666;
- font-weight:500;
- overflow-wrap:anywhere;
-}
+.tabs{display:flex;gap:5px;overflow-x:auto;padding:10px 0}
+.tab{border:1px solid #e9e1e8;background:white;color:#888;border-radius:20px;padding:6px 11px;white-space:nowrap;font-size:10px}
+.tab.active{background:#b04ba5;color:white;border-color:#b04ba5}
 
-.detail {
- font-size:10px;
- color:#aaa;
- margin-top:4px;
- line-height:1.5;
-}
+.empty{text-align:center;padding:20px 8px;color:#aaa;font-size:11px}
+.divider{height:1px;background:#eee;margin:12px 0}
 
-.amount {
- text-align:right;
- font-size:14px;
- font-weight:600;
- white-space:nowrap;
-}
+.chart{width:100%;height:165px;display:block}
+.hidden{display:none!important}
 
-.actions {
- display:flex;
- justify-content:flex-end;
- gap:4px;
- margin-top:6px;
-}
+.foot{text-align:center;color:#aaa;font-size:10px;padding:18px 0}
 
-.mini {
- padding:5px 7px;
- font-size:10px;
-}
-
-.tabs {
- display:flex;
- gap:5px;
- overflow-x:auto;
- padding:10px 0;
-}
-
-.tab {
- border:1px solid #e9e1e8;
- background:white;
- color:#888;
- border-radius:20px;
- padding:6px 11px;
- white-space:nowrap;
- font-size:11px;
-}
-
-.tab.active {
- background:#b04ba5;
- color:white;
- border-color:#b04ba5;
-}
-
-.empty {
- text-align:center;
- padding:20px 8px;
- color:#aaa;
- font-size:12px;
-}
-
-.divider {
- height:1px;
- background:#eee;
- margin:12px 0;
-}
-
-.chart {
- width:100%;
- height:165px;
- display:block;
-}
-
-.hidden {display:none!important}
-
-.foot {
- text-align:center;
- color:#aaa;
- font-size:10px;
- padding:18px 0;
-}
-
-.toast {
+.toast{
  position:fixed;
  z-index:99;
  bottom:25px;
@@ -417,12 +219,106 @@ button,input,select {font:inherit}
  text-align:center;
 }
 
-@media(max-width:650px) {
- .span6,.span4 {grid-column:span 12}
- .metrics {grid-template-columns:repeat(3,1fr)}
- .wrap {padding:0 12px}
- .section {font-size:15px}
- .head-value {font-size:17px}
+.progress-wrap{padding:15px 15px 12px}
+
+.progress-top{
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ margin-bottom:9px;
+}
+
+.progress-top span{font-size:11px;color:#999}
+.progress-top strong{font-size:13px;color:var(--purple)}
+
+.progress{
+ height:9px;
+ background:#f0edf0;
+ border-radius:20px;
+ overflow:hidden;
+}
+
+.progress-fill{
+ height:100%;
+ width:0;
+ background:linear-gradient(90deg,#b04ba5,#df9ad4);
+ border-radius:20px;
+ transition:width 1.2s cubic-bezier(.2,.8,.2,1);
+}
+
+.progress-label{
+ display:flex;
+ justify-content:space-between;
+ margin-top:7px;
+ font-size:10px;
+ color:#aaa;
+}
+
+.extra-payment{
+ background:#faf7fa;
+ border:1px solid #f0e5ef;
+ border-radius:8px;
+ padding:11px;
+ margin-top:12px;
+}
+
+.extra-payment strong{color:var(--purple);font-size:12px}
+.extra-payment p{font-size:10px;color:#999;line-height:1.5;margin:5px 0 9px}
+
+.donut-area{
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ gap:20px;
+ padding:12px 5px;
+ flex-wrap:wrap;
+}
+
+.donut{
+ width:130px;
+ height:130px;
+ position:relative;
+ flex-shrink:0;
+}
+
+.donut svg{width:100%;height:100%;transform:rotate(-90deg)}
+.donut-center{
+ position:absolute;
+ inset:0;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ flex-direction:column;
+}
+
+.donut-center strong{font-size:17px;color:#666}
+.donut-center small{font-size:9px;color:#aaa}
+
+.legend{display:flex;flex-direction:column;gap:12px}
+.legend-item{display:flex;align-items:center;gap:7px;font-size:11px;color:#888}
+.dot{width:8px;height:8px;border-radius:50%}
+
+.speed-box{
+ display:grid;
+ grid-template-columns:repeat(2,1fr);
+ gap:8px;
+ padding:0 15px 14px;
+}
+
+.speed-item{background:#fafafa;padding:10px;border-radius:7px}
+.speed-item small{display:block;color:#999;font-size:10px;margin-bottom:5px}
+.speed-item strong{font-size:14px;color:#666}
+
+.pulse{animation:pulse 2s infinite}
+@keyframes pulse{
+ 0%,100%{opacity:1}
+ 50%{opacity:.65}
+}
+
+@media(max-width:650px){
+ .span6,.span4{grid-column:span 12}
+ .metrics{grid-template-columns:repeat(3,1fr)}
+ .wrap{padding:0 12px}
 }
 
 </style>
@@ -440,9 +336,7 @@ button,input,select {font:inherit}
  </div>
 </header>
 
-<div class="colorline">
- <span></span><span></span><span></span><span></span>
-</div>
+<div class="colorline"><span></span><span></span><span></span><span></span></div>
 
 <section class="ticker">
  <div>
@@ -455,131 +349,105 @@ button,input,select {font:inherit}
 
 <div class="grid">
 
-<!-- BİRİKMİŞ PARA -->
-
 <section class="card span12">
-
  <div class="card-head">
   <h3 class="section">Birikmiş para</h3>
-  <div style="display:flex;align-items:center">
-   <span class="head-value" id="available">₺0,00</span>
-   <span class="arrow">›</span>
-  </div>
+  <span class="head-value" id="available">₺0,00</span>
  </div>
-
  <div class="card-body">
-
-  <div class="balance-row">
-   <span>Bugüne kadar biriken</span>
-   <strong id="reduced">₺0,00</strong>
-  </div>
-
-  <div class="balance-row">
-   <span>Kasaya aktarılan</span>
-   <strong id="transferredDisplay">₺0,00</strong>
-  </div>
-
-  <div class="balance-row">
-   <span>Başlangıç borcu</span>
-   <strong id="initialDisplay">₺0,00</strong>
-  </div>
-
-  <div class="balance-row">
-   <span>Hedefe kalan gün</span>
-   <strong id="remainingDays">-</strong>
-  </div>
-
+  <div class="balance-row"><span>Bugüne kadar biriken</span><strong id="reduced">₺0,00</strong></div>
+  <div class="balance-row"><span>Kasaya aktarılan</span><strong id="transferredDisplay">₺0,00</strong></div>
+  <div class="balance-row"><span>Başlangıç borcu</span><strong id="initialDisplay">₺0,00</strong></div>
+  <div class="balance-row"><span>Hedefe kalan gün</span><strong id="remainingDays">-</strong></div>
  </div>
 </section>
 
-<!-- BORÇ -->
-
 <section class="card span12">
-
  <div class="card-head">
   <h3 class="section">Kalan borç</h3>
-  <div style="display:flex;align-items:center">
-   <span class="head-value" id="debtMain">₺0,00</span>
-   <span class="arrow">›</span>
+  <span class="head-value" id="debtMain">₺0,00</span>
+ </div>
+
+ <div class="progress-wrap">
+  <div class="progress-top">
+   <span>Borç ödeme ilerlemesi</span>
+   <strong id="progressPercent">%0</strong>
+  </div>
+  <div class="progress">
+   <div class="progress-fill" id="debtProgress"></div>
+  </div>
+  <div class="progress-label">
+   <span>Başlangıç</span>
+   <span>Hedef: %100</span>
   </div>
  </div>
 
  <div class="card-body">
-  <div class="balance-row">
-   <span>USD karşılığı</span>
-   <strong id="debtUsd">-</strong>
-  </div>
-  <div class="balance-row">
-   <span>Hedef tarihi</span>
-   <strong id="targetDate">-</strong>
-  </div>
-  <div class="balance-row">
-   <span>Aylık borç ödemesi</span>
-   <strong id="monthlyDisplay">₺0,00</strong>
-  </div>
+  <div class="balance-row"><span>USD karşılığı</span><strong id="debtUsd">-</strong></div>
+  <div class="balance-row"><span>Hedef tarihi</span><strong id="targetDate">-</strong></div>
+  <div class="balance-row"><span>Aylık borç ödemesi</span><strong id="monthlyDisplay">₺0,00</strong></div>
+  <div class="balance-row"><span>Ekstra ödemeler</span><strong id="extraPaidDisplay">₺0,00</strong></div>
  </div>
 
  <div class="metrics">
-  <div class="metric">
-   <label>Azalan borç</label>
-   <b id="reducedUsd">-</b>
-  </div>
-  <div class="metric">
-   <label>Hedefe kalan</label>
-   <b id="remainingUsd">-</b>
-  </div>
-  <div class="metric">
-   <label>Durum</label>
-   <b id="debtStatus">Aktif</b>
-  </div>
+  <div class="metric"><label>Azalan borç</label><b id="reducedUsd">-</b></div>
+  <div class="metric"><label>Hedefe kalan</label><b id="remainingUsd">-</b></div>
+  <div class="metric"><label>Durum</label><b id="debtStatus">Aktif</b></div>
  </div>
-
 </section>
-
-<!-- KASA -->
 
 <section class="card span12">
-
  <div class="card-head">
-  <h3 class="section">Kasa bakiyesi</h3>
-  <div style="display:flex;align-items:center">
-   <span class="head-value" id="vaultTotal">₺0,00</span>
-   <span class="arrow">›</span>
+  <h3 class="section">Borç ödeme analizi</h3>
+  <span class="head-value" id="paidPercent">%0</span>
+ </div>
+
+ <div class="donut-area">
+  <div class="donut">
+   <svg viewBox="0 0 120 120">
+    <circle cx="60" cy="60" r="48" fill="none" stroke="#f0edf0" stroke-width="12"/>
+    <circle id="donutPaid" cx="60" cy="60" r="48" fill="none" stroke="#b04ba5" stroke-width="12" stroke-linecap="round" stroke-dasharray="0 302"/>
+   </svg>
+   <div class="donut-center">
+    <strong id="donutPercent">%0</strong>
+    <small>TAMAMLANDI</small>
+   </div>
+  </div>
+  <div class="legend">
+   <div class="legend-item"><span class="dot" style="background:#b04ba5"></span><span>Ödenen: <b id="legendPaid">₺0</b></span></div>
+   <div class="legend-item"><span class="dot" style="background:#eee"></span><span>Kalan: <b id="legendDebt">₺0</b></span></div>
   </div>
  </div>
 
- <div class="card-body">
-  <div class="balance-row">
-   <span>USD karşılığı</span>
-   <strong id="vaultUsd">-</strong>
+ <div class="speed-box">
+  <div class="speed-item">
+   <small>Günlük borç azalma hızı</small>
+   <strong id="dailySpeed">₺0</strong>
   </div>
-
-  <div class="balance-row">
-   <span>Kasaya giriş sayısı</span>
-   <strong id="vaultCount">0</strong>
+  <div class="speed-item">
+   <small>Tahmini bitiş</small>
+   <strong id="estimatedEnd">-</strong>
   </div>
-
-  <button class="btn good" style="width:100%;margin-top:8px" onclick="transferToVault()">
-   Biriken tutarı kasaya aktar
-  </button>
  </div>
 </section>
 
-<!-- FİNANS AYARLARI -->
+<section class="card span12">
+ <div class="card-head">
+  <h3 class="section">Kasa bakiyesi</h3>
+  <span class="head-value" id="vaultTotal">₺0,00</span>
+ </div>
+ <div class="card-body">
+  <div class="balance-row"><span>USD karşılığı</span><strong id="vaultUsd">-</strong></div>
+  <div class="balance-row"><span>Kasaya giriş sayısı</span><strong id="vaultCount">0</strong></div>
+  <button class="btn good" style="width:100%;margin-top:8px" onclick="transferToVault()">Biriken tutarı kasaya aktar</button>
+  <p class="notice">Kasaya aktarılan tutar, istenildiğinde borç ödemesi olarak kullanılabilir.</p>
+ </div>
+</section>
 
 <section class="card span6">
-
- <div class="card-head">
-  <h3 class="section">Finans ayarları</h3>
- </div>
-
+ <div class="card-head"><h3 class="section">Finans ayarları</h3></div>
  <div class="card-body">
-
-  <div class="field">
-   <label>Başlangıç / kalan borç</label>
-   <input id="fDebt" type="number" min="0" step="0.01">
-  </div>
-
+  <div class="field"><label>Başlangıç / kalan borç</label><input id="fDebt" type="number" min="0" step="0.01"></div>
   <div class="field">
    <label>Para birimi</label>
    <select id="fCurrency">
@@ -588,24 +456,9 @@ button,input,select {font:inherit}
     <option value="EUR">EUR · Euro</option>
    </select>
   </div>
-
-  <div class="field">
-   <label>Aylık gelir</label>
-   <input id="fIncome" type="number" min="0" step="0.01">
-   <small class="small" id="incomeUsd"></small>
-  </div>
-
-  <div class="field">
-   <label>Aylık borca ayrılan</label>
-   <input id="fMonthly" type="number" min="0" step="0.01">
-   <small class="small" id="monthlyUsd"></small>
-  </div>
-
-  <div class="field">
-   <label>Borç bitiş hedefi</label>
-   <input id="fTarget" type="date">
-  </div>
-
+  <div class="field"><label>Aylık gelir</label><input id="fIncome" type="number" min="0" step="0.01"><small class="small" id="incomeUsd"></small></div>
+  <div class="field"><label>Aylık borca ayrılan</label><input id="fMonthly" type="number" min="0" step="0.01"><small class="small" id="monthlyUsd"></small></div>
+  <div class="field"><label>Borç bitiş hedefi</label><input id="fTarget" type="date"></div>
   <div class="field">
    <label>Hesaplama yöntemi</label>
    <select id="fMode">
@@ -613,122 +466,46 @@ button,input,select {font:inherit}
     <option value="monthly">Aylık birikime göre</option>
    </select>
   </div>
-
   <button class="btn primary" onclick="saveFinance()">Ayarları kaydet</button>
   <button class="btn ghost" onclick="resetAccrual()">Sayacı sıfırla</button>
-
-  <p class="notice">
-   Bu bölümdeki hesaplamalar simülasyon amaçlıdır.
-  </p>
-
+  <p class="notice">Hedef tarihine göre günlük borç azalma hızı dinamik hesaplanır.</p>
  </div>
 </section>
 
-<!-- KASA HAREKETLERİ -->
-
 <section class="card span6">
-
- <div class="card-head">
-  <h3 class="section">Kasa hareketi ekle</h3>
- </div>
-
+ <div class="card-head"><h3 class="section">Kasa hareketi ekle</h3></div>
  <div class="card-body">
-
   <div class="field">
    <label>İşlem türü</label>
-   <select id="vType">
-    <option value="in">Para ekle</option>
-    <option value="out">Para çek</option>
-   </select>
+   <select id="vType"><option value="in">Para ekle</option><option value="out">Para çek</option></select>
   </div>
-
-  <div class="field">
-   <label>Tutar</label>
-   <input id="vAmount" type="number" min="0.01" step="0.01" placeholder="0,00">
-  </div>
-
+  <div class="field"><label>Tutar</label><input id="vAmount" type="number" min="0.01" step="0.01" placeholder="0,00"></div>
   <div class="field">
    <label>Para birimi</label>
-   <select id="vCurrency">
-    <option>TRY</option>
-    <option>USD</option>
-    <option>EUR</option>
-   </select>
+   <select id="vCurrency"><option>TRY</option><option>USD</option><option>EUR</option></select>
   </div>
-
-  <div class="field">
-   <label>Açıklama</label>
-   <input id="vNote" placeholder="Açıklama">
-  </div>
-
+  <div class="field"><label>Açıklama</label><input id="vNote" placeholder="Açıklama"></div>
   <button class="btn primary" onclick="addVault()">Kasaya işle</button>
-
   <div class="divider"></div>
   <div id="vaultList" class="list"></div>
-
  </div>
 </section>
 
-<!-- ÖDEME KAYDI -->
-
 <section class="card span6">
-
- <div class="card-head">
-  <h3 class="section">Ödeme / hatırlatma ekle</h3>
- </div>
-
+ <div class="card-head"><h3 class="section">Ödeme / hatırlatma ekle</h3></div>
  <div class="card-body">
-
-  <div class="field">
-   <label>Kayıt adı</label>
-   <input id="rName" placeholder="Örn. Kasko">
-  </div>
-
-  <div class="field">
-   <label>Tutar</label>
-   <input id="rAmount" type="number" min="0" step="0.01">
-  </div>
-
-  <div class="field">
-   <label>Vade tarihi</label>
-   <input id="rDue" type="date">
-  </div>
-
-  <div class="field">
-   <label>Tür</label>
-   <select id="rType">
-    <option value="payment">Ödeme</option>
-    <option value="reminder">Hatırlatma</option>
-   </select>
-  </div>
-
-  <div class="field">
-   <label>Tekrar</label>
-   <select id="rRepeat">
-    <option value="none">Tek seferlik</option>
-    <option value="monthly">Her ay</option>
-    <option value="yearly">Her yıl</option>
-   </select>
-  </div>
-
-  <div class="field">
-   <label>Not</label>
-   <input id="rNote" placeholder="İsteğe bağlı">
-  </div>
-
+  <div class="field"><label>Kayıt adı</label><input id="rName" placeholder="Örn. Kasko"></div>
+  <div class="field"><label>Tutar</label><input id="rAmount" type="number" min="0" step="0.01"></div>
+  <div class="field"><label>Vade tarihi</label><input id="rDue" type="date"></div>
+  <div class="field"><label>Tür</label><select id="rType"><option value="payment">Ödeme</option><option value="reminder">Hatırlatma</option></select></div>
+  <div class="field"><label>Tekrar</label><select id="rRepeat"><option value="none">Tek seferlik</option><option value="monthly">Her ay</option><option value="yearly">Her yıl</option></select></div>
+  <div class="field"><label>Not</label><input id="rNote" placeholder="İsteğe bağlı"></div>
   <button class="btn primary" onclick="addRecord()">Kaydı ekle</button>
-
  </div>
 </section>
 
-<!-- ÖDEMELER -->
-
 <section class="card span6">
-
- <div class="card-head">
-  <h3 class="section">Ödemeler ve hatırlatmalar</h3>
- </div>
-
+ <div class="card-head"><h3 class="section">Ödemeler ve hatırlatmalar</h3></div>
  <div class="card-body">
   <div class="tabs">
    <button class="tab active" onclick="setFilter('all',this)">Tümü</button>
@@ -736,80 +513,47 @@ button,input,select {font:inherit}
    <button class="tab" onclick="setFilter('reminder',this)">Hatırlatmalar</button>
    <button class="tab" onclick="setFilter('late',this)">Geciken</button>
   </div>
-
   <div id="recordList" class="list"></div>
  </div>
 </section>
 
-<!-- GEÇMİŞ -->
-
 <section class="card span6">
-
- <div class="card-head">
-  <h3 class="section">Ödeme geçmişi</h3>
- </div>
-
- <div class="card-body">
-  <div id="historyList" class="list"></div>
- </div>
-</section>
-
-<!-- GRAFİKLER -->
-
-<section class="card span6">
- <div class="card-head">
-  <h3 class="section">Borç grafiği</h3>
- </div>
- <div class="card-body">
-  <canvas id="financeChart" class="chart"></canvas>
- </div>
+ <div class="card-head"><h3 class="section">Ödeme geçmişi</h3></div>
+ <div class="card-body"><div id="historyList" class="list"></div></div>
 </section>
 
 <section class="card span6">
- <div class="card-head">
-  <h3 class="section">Kasa grafiği</h3>
- </div>
- <div class="card-body">
-  <canvas id="vaultChart" class="chart"></canvas>
- </div>
+ <div class="card-head"><h3 class="section">Borç grafiği</h3></div>
+ <div class="card-body"><canvas id="financeChart" class="chart"></canvas></div>
 </section>
 
-<!-- YEDEKLEME -->
+<section class="card span6">
+ <div class="card-head"><h3 class="section">Kasa grafiği</h3></div>
+ <div class="card-body"><canvas id="vaultChart" class="chart"></canvas></div>
+</section>
+
+<section class="card span6">
+ <div class="card-head"><h3 class="section">Ekstra borç ödemeleri</h3></div>
+ <div class="card-body"><div id="extraHistory" class="list"></div></div>
+</section>
 
 <section class="card span12">
-
- <div class="card-head">
-  <h3 class="section">Yedekleme ve uygulama yönetimi</h3>
- </div>
-
+ <div class="card-head"><h3 class="section">Yedekleme ve uygulama yönetimi</h3></div>
  <div class="card-body">
-
   <div class="row">
    <button class="btn primary" onclick="backup()">JSON yedeği indir</button>
-
    <label class="btn ghost" for="restoreFile">Yedek yükle</label>
    <input class="hidden" id="restoreFile" type="file" accept="application/json" onchange="restore(event)">
-
    <button class="btn ghost" onclick="exportCSV()">CSV indir</button>
-
    <button class="btn danger" onclick="resetApp()">Uygulamayı sıfırla</button>
   </div>
-
-  <p class="notice">
-   Veriler cihazınızın tarayıcısında saklanır.
-   Safari verileri silinirse yedek olmadan kaybolabilir.
-   Düzenli olarak JSON yedeği alın.
-  </p>
-
+  <p class="notice">Veriler cihazınızın tarayıcısında saklanır. Safari verileri silinirse yedek olmadan kaybolabilir. Düzenli JSON yedeği alın.</p>
  </div>
 </section>
 
 </div>
 
-<div class="foot">
- TIMEPANEL PRO · Finansal takip ve kontrol paneli
-</div>
-
+<div class="foot">TIMEPANEL PRO · Finansal takip ve kontrol paneli</div>
 </div>
 
 <div id="toast" class="toast hidden"></div>
@@ -817,18 +561,19 @@ button,input,select {font:inherit}
 <script>
 'use strict';
 
-const KEY='timepanel_pro_binance_v2';
+const KEY='timepanel_pro_binance_v3';
 
 const defaults=()=>({
  finance:{
   initial:0,remaining:0,currency:'TRY',
   income:0,monthly:0,target:'',mode:'target',
   startedAt:Date.now(),lastAccrual:Date.now(),
-  transferred:0
+  transferred:0,extraPaid:0
  },
  vault:[],
  records:[],
  history:[],
+ extraHistory:[],
  rate:{usdttry:0,eurtry:0,updated:0}
 });
 
@@ -845,6 +590,7 @@ function load(){
    vault:Array.isArray(x.vault)?x.vault:[],
    records:Array.isArray(x.records)?x.records:[],
    history:Array.isArray(x.history)?x.history:[],
+   extraHistory:Array.isArray(x.extraHistory)?x.extraHistory:[],
    rate:{...d.rate,...(x.rate||{})}
   };
  }catch(e){return defaults()}
@@ -860,11 +606,8 @@ function n(v){const x=Number(v);return Number.isFinite(x)?x:0}
 function id(){return Date.now().toString(36)+Math.random().toString(36).slice(2,7)}
 
 function money(v,c='TRY'){
- try{
-  return new Intl.NumberFormat('tr-TR',{
-   style:'currency',currency:c,maximumFractionDigits:2
-  }).format(n(v));
- }catch(e){return num(v)+' '+c}
+ try{return new Intl.NumberFormat('tr-TR',{style:'currency',currency:c,maximumFractionDigits:2}).format(n(v))}
+ catch(e){return num(v)+' '+c}
 }
 
 function num(v){
@@ -876,6 +619,12 @@ function tryValue(v,c){
  if(c==='USD')return n(v)*(db.rate.usdttry||0);
  if(c==='EUR')return n(v)*(db.rate.eurtry||0);
  return 0;
+}
+
+function fromTRY(v,c){
+ if(c==='TRY')return v;
+ const r=c==='USD'?db.rate.usdttry:db.rate.eurtry;
+ return r>0?v/r:0;
 }
 
 function usdValue(v,c){
@@ -924,6 +673,10 @@ function reduced(){
  return Math.max(0,n(db.finance.initial)-remaining());
 }
 
+function availableAccrual(){
+ return Math.max(0,accrued()-n(db.finance.transferred));
+}
+
 function balance(c){
  return db.vault.filter(v=>v.currency===c).reduce(
   (s,v)=>s+(v.type==='out'?-n(v.amount):n(v.amount)),0
@@ -934,14 +687,44 @@ function vaultTotalTRY(){
  return ['TRY','USD','EUR'].reduce((s,c)=>s+tryValue(balance(c),c),0);
 }
 
+function daysLeft(){
+ const t=db.finance.target;
+ if(!t)return 0;
+ return Math.max(0,Math.ceil((new Date(t+'T23:59:59').getTime()-Date.now())/86400000));
+}
+
+function dailyRate(){
+ const f=db.finance;
+ const r=remaining();
+ if(r<=0)return 0;
+
+ if(f.mode==='target'&&f.target&&daysLeft()>0){
+  return r/daysLeft();
+ }
+
+ return n(f.monthly)/30.4375;
+}
+
+function estimatedFinish(){
+ const f=db.finance;
+ const r=remaining();
+ const speed=dailyRate();
+
+ if(r<=0)return 'Tamamlandı';
+ if(speed<=0)return '-';
+
+ const date=new Date(Date.now()+r/speed*86400000);
+ return date.toLocaleDateString('tr-TR');
+}
+
 function updateUI(){
 
  const f=db.finance;
  const r=remaining();
  const d=reduced();
- const transferred=n(f.transferred);
- const a=Math.max(0,d-transferred);
+ const a=availableAccrual();
  const c=f.currency;
+ const transferred=n(f.transferred);
 
  el('debtMain').textContent=money(r,c);
  el('debtUsd').textContent=usdText(r,c);
@@ -951,33 +734,41 @@ function updateUI(){
  el('transferredDisplay').textContent=money(transferred,c);
  el('initialDisplay').textContent=money(f.initial,c);
  el('monthlyDisplay').textContent=money(f.monthly,c);
+ el('extraPaidDisplay').textContent=money(f.extraPaid,c);
 
  el('reducedUsd').textContent=usdText(d,c);
  el('remainingUsd').textContent=usdText(r,c);
-
  el('incomeUsd').textContent=usdText(f.income,c);
  el('monthlyUsd').textContent=usdText(f.monthly,c);
 
- let days='-';
+ const days=daysLeft();
+ el('remainingDays').textContent=f.target?(days+' gün'):'-';
 
- if(f.target){
-  const z=Math.ceil(
-   (new Date(f.target+'T23:59:59').getTime()-Date.now())/86400000
-  );
-  days=z>=0?z+' gün':'Tarih geçti';
- }
-
- el('remainingDays').textContent=days;
  el('targetDate').textContent=f.target?
   new Date(f.target+'T00:00:00').toLocaleDateString('tr-TR'):'-';
 
  el('debtStatus').textContent=r<=0?'Tamamlandı':'Aktif';
 
- const total=vaultTotalTRY();
+ const percent=f.initial>0?Math.min(100,Math.max(0,d/f.initial*100)):0;
 
+ el('progressPercent').textContent='%'+num(percent);
+ el('paidPercent').textContent='%'+num(percent);
+ el('donutPercent').textContent='%'+num(percent);
+ el('debtProgress').style.width=percent+'%';
+
+ const circumference=2*Math.PI*48;
+ const dash=circumference*percent/100;
+ el('donutPaid').setAttribute('stroke-dasharray',dash+' '+circumference);
+
+ el('legendPaid').textContent=money(d,c);
+ el('legendDebt').textContent=money(r,c);
+
+ el('dailySpeed').textContent=money(dailyRate(),c);
+ el('estimatedEnd').textContent=estimatedFinish();
+
+ const total=vaultTotalTRY();
  el('vaultTotal').textContent=money(total,'TRY');
  el('vaultUsd').textContent=usdText(total,'TRY');
-
  el('vaultCount').textContent=db.vault.filter(v=>v.type==='in').length;
 
  drawCharts();
@@ -985,9 +776,7 @@ function updateUI(){
 
 function renderRate(){
  const r=db.rate.usdttry;
-
  el('rate').textContent=r>0?'₺'+num(r):'Kur verisi yok';
-
  el('rateMeta').textContent=r>0?
   '1 USDT ≈ '+num(r)+' TL · '+new Date(db.rate.updated).toLocaleTimeString('tr-TR'):
   'Binance TR akışından fiyat bekleniyor';
@@ -1009,17 +798,13 @@ function setRate(price,symbol){
  if(symbol==='EURTRY')db.rate.eurtry=price;
 
  db.rate.updated=Date.now();
-
  save();
  renderRate();
  updateUI();
  renderVault();
- renderRecords();
- renderHistory();
 }
 
 function connectRate(){
-
  manualClose=false;
  clearTimeout(reconnectTimer);
 
@@ -1031,17 +816,13 @@ function connectRate(){
  setStatus('BAĞLANIYOR');
 
  try{
-  socket=new WebSocket(
-   'wss://stream-cloud.binance.tr/stream?streams=usdttry@trade/eurtry@trade'
-  );
-
+  socket=new WebSocket('wss://stream-cloud.binance.tr/stream?streams=usdttry@trade/eurtry@trade');
   socket.onopen=()=>setStatus('BAĞLI','ok');
 
   socket.onmessage=e=>{
    try{
     const m=JSON.parse(e.data);
     const d=m.data||m;
-
     if(d.e==='trade'){
      if(d.s==='USDTTRY')setRate(Number(d.p),'USDTTRY');
      if(d.s==='EURTRY')setRate(Number(d.p),'EURTRY');
@@ -1057,7 +838,6 @@ function connectRate(){
     reconnectTimer=setTimeout(connectRate,5000);
    }
   };
-
  }catch(e){
   setStatus('BAĞLANAMADI','bad');
   reconnectTimer=setTimeout(connectRate,10000);
@@ -1065,7 +845,6 @@ function connectRate(){
 }
 
 function saveFinance(){
-
  const f=db.finance;
  const v=Math.max(0,n(el('fDebt').value));
 
@@ -1078,15 +857,16 @@ function saveFinance(){
  f.mode=el('fMode').value;
  f.startedAt=f.lastAccrual=Date.now();
  f.transferred=0;
+ f.extraPaid=0;
 
  save();
  updateUI();
+ renderExtraHistory();
  toast('Finans ayarları kaydedildi');
 }
 
 function fillFinance(){
  const f=db.finance;
-
  el('fDebt').value=remaining().toFixed(2);
  el('fCurrency').value=f.currency;
  el('fIncome').value=f.income;
@@ -1098,22 +878,19 @@ function fillFinance(){
 function resetAccrual(){
  const r=remaining();
  const f=db.finance;
-
- f.initial=f.remaining=r;
+ f.initial=r;
+ f.remaining=r;
  f.startedAt=f.lastAccrual=Date.now();
  f.transferred=0;
-
+ f.extraPaid=0;
  save();
  updateUI();
  toast('Birikim sayacı sıfırlandı');
 }
 
 function transferToVault(){
-
  const f=db.finance;
- const a=Math.floor(
-  Math.max(0,reduced()-n(f.transferred))*100
- )/100;
+ const a=Math.floor(availableAccrual()*100)/100;
 
  if(a<=0){
   toast('Aktarılacak birikim yok');
@@ -1121,48 +898,109 @@ function transferToVault(){
  }
 
  db.vault.unshift({
-  id:id(),
-  type:'in',
-  amount:a,
-  currency:f.currency,
+  id:id(),type:'in',amount:a,currency:f.currency,
   note:'Borç birikiminden kasaya aktarıldı',
-  date:Date.now(),
-  source:'accrual'
+  date:Date.now(),source:'accrual'
  });
 
  f.transferred+=a;
-
  save();
  renderVault();
  updateUI();
-
  toast(money(a,f.currency)+' kasaya aktarıldı');
 }
 
-function addVault(){
+function applyVaultToDebt(i){
+ const v=db.vault[i];
+ if(!v||v.type!=='in'){
+  toast('Bu işlem borç ödemesinde kullanılamaz');
+  return;
+ }
 
+ const f=db.finance;
+ const available=balance(v.currency);
+
+ if(available<n(v.amount)){
+  toast('Bu para kasada artık mevcut değil');
+  return;
+ }
+
+ const valueTRY=tryValue(v.amount,v.currency);
+ const payment=fromTRY(valueTRY,f.currency);
+
+ if(payment<=0){
+  toast('Gerekli döviz kuru henüz alınmadı');
+  return;
+ }
+
+ const current=remaining();
+ const actual=Math.min(current,payment);
+
+ if(actual<=0){
+  toast('Ödenecek borç kalmamış');
+  return;
+ }
+
+ const convertedTRY=tryValue(actual,f.currency);
+ const cashDeduction=fromTRY(convertedTRY,v.currency);
+
+ if(cashDeduction<=0||cashDeduction>available+0.000001){
+  toast('Dönüşüm veya kasa bakiyesi yetersiz');
+  return;
+ }
+
+ if(!confirm(
+  money(actual,f.currency)+' borçtan düşülsün mü?\n\n'+
+  money(cashDeduction,v.currency)+' kasadan çıkacak.\n'+
+  'Kalan borç: '+money(current-actual,f.currency)
+ ))return;
+
+ // Önce birikmiş zaman farkını sabitle.
+ f.remaining=current;
+ f.lastAccrual=Date.now();
+
+ // Ekstra ödeme borç bakiyesini anında düşürür.
+ f.remaining=Math.max(0,f.remaining-actual);
+ f.extraPaid=n(f.extraPaid)+actual;
+
+ // Yeni hedef temposu, yeni kalan borca göre hesaplanır.
+ db.vault.unshift({
+  id:id(),
+  type:'out',
+  amount:cashDeduction,
+  currency:v.currency,
+  note:'Borç ödemesi: '+money(actual,f.currency),
+  date:Date.now(),
+  source:'debtPayment'
+ });
+
+ db.extraHistory.unshift({
+  id:id(),
+  amount:actual,
+  currency:f.currency,
+  cashAmount:cashDeduction,
+  cashCurrency:v.currency,
+  date:Date.now(),
+  note:'Kasadan borca aktarıldı'
+ });
+
+ save();
+ renderAll();
+ toast('Borç ödemesi yapıldı. Yeni tempo hesaplandı.');
+}
+
+function addVault(){
  const a=n(el('vAmount').value);
  const c=el('vCurrency').value;
  const t=el('vType').value;
 
- if(a<=0){
-  toast('Geçerli tutar gir');
-  return;
- }
-
- if(t==='out'&&balance(c)<a){
-  toast('Yeterli kasa bakiyesi yok');
-  return;
- }
+ if(a<=0){toast('Geçerli tutar gir');return}
+ if(t==='out'&&balance(c)<a){toast('Yeterli kasa bakiyesi yok');return}
 
  db.vault.unshift({
-  id:id(),
-  type:t,
-  amount:a,
-  currency:c,
+  id:id(),type:t,amount:a,currency:c,
   note:el('vNote').value.trim(),
-  date:Date.now(),
-  source:'manual'
+  date:Date.now(),source:'manual'
  });
 
  el('vAmount').value='';
@@ -1171,22 +1009,16 @@ function addVault(){
  save();
  renderVault();
  updateUI();
-
  toast('Kasa hareketi eklendi');
 }
 
 function esc(s){
  return String(s??'').replace(/[&<>"']/g,c=>({
-  '&':'&amp;',
-  '<':'&lt;',
-  '>':'&gt;',
-  '"':'&quot;',
-  "'":'&#39;'
+  '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
  }[c]));
 }
 
 function renderVault(){
-
  const e=el('vaultList');
 
  if(!db.vault.length){
@@ -1194,7 +1026,7 @@ function renderVault(){
   return;
  }
 
- e.innerHTML=db.vault.slice(0,40).map((v,i)=>`
+ e.innerHTML=db.vault.slice(0,60).map((v,i)=>`
   <div class="item">
    <div>
     <div class="name">${esc(v.note||'Kasa hareketi')}</div>
@@ -1204,6 +1036,7 @@ function renderVault(){
     <div class="amount">${v.type==='out'?'−':'+'}${money(v.amount,v.currency)}</div>
     <div class="detail">${usdText(v.amount,v.currency)}</div>
     <div class="actions">
+     ${v.type==='in'?`<button class="btn good mini" onclick="applyVaultToDebt(${i})">Borçtan düş</button>`:''}
      <button class="btn mini" onclick="editVault(${i})">Düzenle</button>
      <button class="btn danger mini" onclick="deleteVault(${i})">Sil</button>
     </div>
@@ -1213,19 +1046,18 @@ function renderVault(){
 }
 
 function editVault(i){
-
  const v=db.vault[i];
  if(!v)return;
 
- const a=prompt('Yeni tutar',v.amount);
- if(a===null)return;
-
- const x=n(a);
-
- if(x<=0){
-  toast('Tutar geçersiz');
+ if(v.source==='debtPayment'){
+  toast('Borç ödeme kayıtları doğrudan düzenlenemez');
   return;
  }
+
+ const a=prompt('Yeni tutar',v.amount);
+ if(a===null)return;
+ const x=n(a);
+ if(x<=0){toast('Tutar geçersiz');return}
 
  const note=prompt('Açıklama',v.note||'');
  if(note===null)return;
@@ -1239,9 +1071,7 @@ function editVault(i){
  }
 
  if(v.source==='accrual'){
-  db.finance.transferred=Math.max(
-   0,n(db.finance.transferred)+x-v.amount
-  );
+  db.finance.transferred=Math.max(0,n(db.finance.transferred)+x-v.amount);
  }
 
  v.amount=x;
@@ -1253,99 +1083,77 @@ function editVault(i){
 }
 
 function deleteVault(i){
-
  const v=db.vault[i];
  if(!v||!confirm('Kasa hareketi silinsin mi?'))return;
 
+ if(v.source==='debtPayment'){
+  toast('Borç ödeme hareketi doğrudan silinemez');
+  return;
+ }
+
  if(v.source==='accrual'){
-  db.finance.transferred=Math.max(
-   0,n(db.finance.transferred)-v.amount
-  );
+  db.finance.transferred=Math.max(0,n(db.finance.transferred)-v.amount);
  }
 
  db.vault.splice(i,1);
-
  save();
  renderVault();
  updateUI();
 }
 
 function addRecord(){
-
  const name=el('rName').value.trim();
  const due=el('rDue').value;
 
- if(!name||!due){
-  toast('Kayıt adı ve tarih gerekli');
-  return;
- }
+ if(!name||!due){toast('Kayıt adı ve tarih gerekli');return}
 
  db.records.push({
-  id:id(),
-  name,
+  id:id(),name,
   amount:Math.max(0,n(el('rAmount').value)),
-  currency:db.finance.currency,
-  due,
+  currency:db.finance.currency,due,
   type:el('rType').value,
   repeat:el('rRepeat').value,
-  note:el('rNote').value.trim(),
-  done:false
+  note:el('rNote').value.trim(),done:false
  });
 
  ['rName','rAmount','rDue','rNote'].forEach(k=>el(k).value='');
-
  save();
  renderRecords();
  toast('Kayıt eklendi');
 }
 
 function setFilter(f,b){
-
  filter=f;
-
- document.querySelectorAll('.tab').forEach(
-  x=>x.classList.remove('active')
- );
-
+ document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
  b.classList.add('active');
  renderRecords();
 }
 
 function nextDue(r){
-
  const d=new Date(r.due+'T12:00:00');
  const day=d.getDate();
 
  if(r.repeat==='monthly'){
   d.setDate(1);
   d.setMonth(d.getMonth()+1);
-  d.setDate(
-   Math.min(day,new Date(d.getFullYear(),d.getMonth()+1,0).getDate())
-  );
+  d.setDate(Math.min(day,new Date(d.getFullYear(),d.getMonth()+1,0).getDate()));
  }else if(r.repeat==='yearly'){
   d.setFullYear(d.getFullYear()+1);
  }
 
- return d.getFullYear()+'-'+
-  String(d.getMonth()+1).padStart(2,'0')+'-'+
-  String(d.getDate()).padStart(2,'0');
+ return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
 }
 
 function pay(rid){
-
  const i=db.records.findIndex(r=>r.id===rid);
  if(i<0)return;
 
  const r=db.records[i];
-
  if(!confirm(r.name+' ödendi olarak işaretlensin mi?'))return;
 
  db.history.unshift({
-  id:id(),
-  name:r.name,
-  amount:r.amount,
-  currency:r.currency,
-  paidAt:Date.now()
+  id:id(),name:r.name,amount:r.amount,
+  currency:r.currency,paidAt:Date.now()
  });
 
  if(r.repeat==='none'){
@@ -1354,11 +1162,7 @@ function pay(rid){
   let d=nextDue(r);
   const today=new Date().toISOString().slice(0,10);
   let guard=0;
-
-  while(d<today&&guard++<240){
-   d=nextDue({...r,due:d});
-  }
-
+  while(d<today&&guard++<240)d=nextDue({...r,due:d});
   r.due=d;
  }
 
@@ -1369,16 +1173,13 @@ function pay(rid){
 }
 
 function editRecord(rid){
-
  const r=db.records.find(x=>x.id===rid);
  if(!r)return;
 
  const name=prompt('Kayıt adı',r.name);
  if(name===null)return;
-
  const amount=prompt('Tutar',r.amount);
  if(amount===null)return;
-
  const due=prompt('Vade YYYY-AA-GG',r.due);
  if(due===null)return;
 
@@ -1390,34 +1191,25 @@ function editRecord(rid){
  r.name=name.trim()||r.name;
  r.amount=Math.max(0,n(amount));
  r.due=due;
-
  save();
  renderRecords();
 }
 
 function deleteRecord(rid){
-
  if(!confirm('Kayıt silinsin mi?'))return;
-
  db.records=db.records.filter(x=>x.id!==rid);
-
  save();
  renderRecords();
 }
 
 function renderRecords(){
-
  const e=el('recordList');
  const now=new Date();
-
- const today=new Date(
-  now.getFullYear(),now.getMonth(),now.getDate()
- );
+ const today=new Date(now.getFullYear(),now.getMonth(),now.getDate());
 
  let a=db.records.filter(r=>
   filter==='all'||
-  (filter==='late'&&
-   !r.done&&new Date(r.due+'T00:00:00')<today)||
+  (filter==='late'&&new Date(r.due+'T00:00:00')<today)||
   r.type===filter
  );
 
@@ -1429,22 +1221,12 @@ function renderRecords(){
  }
 
  e.innerHTML=a.map(r=>{
-
-  const late=!r.done&&
-   new Date(r.due+'T00:00:00')<today;
-
+  const late=new Date(r.due+'T00:00:00')<today;
   return `
    <div class="item">
     <div>
-     <div class="name">
-      ${esc(r.name)}
-      ${late?'<small style="color:#d47777">GECİKTİ</small>':''}
-     </div>
-     <div class="detail">
-      ${new Date(r.due+'T00:00:00').toLocaleDateString('tr-TR')}
-      · ${r.type==='payment'?'Ödeme':'Hatırlatma'}
-      · ${r.repeat==='none'?'Tek sefer':r.repeat==='monthly'?'Aylık':'Yıllık'}
-     </div>
+     <div class="name">${esc(r.name)} ${late?'<small style="color:#d47777">GECİKTİ</small>':''}</div>
+     <div class="detail">${new Date(r.due+'T00:00:00').toLocaleDateString('tr-TR')} · ${r.type==='payment'?'Ödeme':'Hatırlatma'} · ${r.repeat==='none'?'Tek sefer':r.repeat==='monthly'?'Aylık':'Yıllık'}</div>
     </div>
     <div>
      <div class="amount">${money(r.amount,r.currency)}</div>
@@ -1460,9 +1242,7 @@ function renderRecords(){
 }
 
 function renderHistory(){
-
  const e=el('historyList');
-
  if(!db.history.length){
   e.innerHTML='<div class="empty">Henüz ödeme geçmişi yok.</div>';
   return;
@@ -1486,73 +1266,77 @@ function renderHistory(){
 }
 
 function editHistory(i){
-
  const h=db.history[i];
  if(!h)return;
-
  const name=prompt('Ödeme adı',h.name);
  if(name===null)return;
-
  const a=prompt('Tutar',h.amount);
  if(a===null)return;
-
  h.name=name;
  h.amount=Math.max(0,n(a));
-
  save();
  renderHistory();
 }
 
 function deleteHistory(i){
-
  if(!confirm('Geçmiş kaydı silinsin mi?'))return;
-
  db.history.splice(i,1);
-
  save();
  renderHistory();
 }
 
-function drawCharts(){
+function renderExtraHistory(){
+ const e=el('extraHistory');
+ if(!db.extraHistory.length){
+  e.innerHTML='<div class="empty">Henüz ekstra borç ödemesi yok.</div>';
+  return;
+ }
 
+ e.innerHTML=db.extraHistory.slice(0,40).map(x=>`
+  <div class="item">
+   <div>
+    <div class="name">Ekstra borç ödemesi</div>
+    <div class="detail">${new Date(x.date).toLocaleString('tr-TR')} · Kasadan ödendi</div>
+   </div>
+   <div>
+    <div class="amount">${money(x.amount,x.currency)}</div>
+    <div class="detail">Kasa: ${money(x.cashAmount,x.cashCurrency)}</div>
+   </div>
+  </div>
+ `).join('');
+}
+
+function drawCharts(){
+ const f=db.finance;
  drawLine(
   'financeChart',
-  [n(db.finance.initial),remaining(),0],
+  [n(f.initial),remaining(),0],
   ['Başlangıç','Şimdi','Hedef']
  );
 
- const c=db.finance.currency;
+ const c=f.currency;
  let v=[0],sum=0;
 
- db.vault.slice().reverse()
-  .filter(x=>x.currency===c)
-  .forEach(x=>{
-   sum+=x.type==='out'?-n(x.amount):n(x.amount);
-   v.push(sum);
-  });
+ db.vault.slice().reverse().filter(x=>x.currency===c).forEach(x=>{
+  sum+=x.type==='out'?-n(x.amount):n(x.amount);
+  v.push(sum);
+ });
 
- drawLine(
-  'vaultChart',
-  v.slice(-12),
-  v.slice(-12).map((_,i)=>String(i+1))
- );
+ drawLine('vaultChart',v.slice(-12),v.slice(-12).map((_,i)=>String(i+1)));
 }
 
 function drawLine(id,values,labels){
-
  const c=el(id);
  if(!c)return;
 
  const d=window.devicePixelRatio||1;
  const w=c.clientWidth||300;
  const h=165;
-
  c.width=w*d;
  c.height=h*d;
 
  const x=c.getContext('2d');
-
- x.scale(d,d);
+ x.setTransform(d,0,0,d,0,0);
  x.clearRect(0,0,w,h);
 
  const p=22;
@@ -1561,6 +1345,7 @@ function drawLine(id,values,labels){
  const range=Math.max(1,max-min);
 
  x.strokeStyle='#eeeeee';
+ x.lineWidth=1;
 
  for(let i=0;i<4;i++){
   const y=p+(h-p*2)*i/3;
@@ -1572,87 +1357,75 @@ function drawLine(id,values,labels){
 
  if(values.length<2)return;
 
+ const points=values.map((v,i)=>({
+  px:p+(w-p*2)*i/(values.length-1),
+  py:h-p-(v-min)/range*(h-p*2)
+ }));
+
  x.beginPath();
+ points.forEach((pt,i)=>i?x.lineTo(pt.px,pt.py):x.moveTo(pt.px,pt.py));
+ x.lineTo(points[points.length-1].px,h-p);
+ x.lineTo(points[0].px,h-p);
+ x.closePath();
+ const grad=x.createLinearGradient(0,0,0,h);
+ grad.addColorStop(0,'rgba(176,75,165,.19)');
+ grad.addColorStop(1,'rgba(176,75,165,0)');
+ x.fillStyle=grad;
+ x.fill();
 
- values.forEach((v,i)=>{
-  const px=p+(w-p*2)*i/(values.length-1);
-  const py=h-p-(v-min)/range*(h-p*2);
-
-  i?x.lineTo(px,py):x.moveTo(px,py);
- });
-
+ x.beginPath();
+ points.forEach((pt,i)=>i?x.lineTo(pt.px,pt.py):x.moveTo(pt.px,pt.py));
  x.strokeStyle='#b04ba5';
  x.lineWidth=2;
  x.stroke();
 
- values.forEach((v,i)=>{
-
-  const px=p+(w-p*2)*i/(values.length-1);
-  const py=h-p-(v-min)/range*(h-p*2);
-
+ points.forEach((pt,i)=>{
   x.beginPath();
-  x.arc(px,py,3,0,Math.PI*2);
+  x.arc(pt.px,pt.py,3,0,Math.PI*2);
   x.fillStyle='#b04ba5';
   x.fill();
-
   x.fillStyle='#999';
   x.font='10px Arial';
   x.textAlign='center';
-  x.fillText(labels[i]||'',px,h-4);
+  x.fillText(labels[i]||'',pt.px,h-4);
  });
 }
 
 function backup(){
-
- const b=new Blob(
-  [JSON.stringify(db,null,2)],
-  {type:'application/json'}
- );
-
+ const b=new Blob([JSON.stringify(db,null,2)],{type:'application/json'});
  const a=document.createElement('a');
-
  a.href=URL.createObjectURL(b);
- a.download='timepanel-yedek-'+
-  new Date().toISOString().slice(0,10)+'.json';
-
+ a.download='timepanel-yedek-'+new Date().toISOString().slice(0,10)+'.json';
  a.click();
-
  setTimeout(()=>URL.revokeObjectURL(a.href),1000);
 }
 
 function restore(e){
-
  const f=e.target.files[0];
  if(!f)return;
-
  const r=new FileReader();
 
  r.onload=()=>{
-
   try{
-
    const x=JSON.parse(r.result);
-
-   if(!x||typeof x!=='object'||
-    !x.finance||
-    !Array.isArray(x.vault)||
-    !Array.isArray(x.records)||
-    !Array.isArray(x.history)
-   )throw Error();
+   if(!x||typeof x!=='object'||!x.finance||
+    !Array.isArray(x.vault)||!Array.isArray(x.records)||
+    !Array.isArray(x.history))throw Error();
 
    const d=defaults();
-
    db={
     ...d,...x,
     finance:{...d.finance,...x.finance},
+    vault:x.vault,
+    records:x.records,
+    history:x.history,
+    extraHistory:Array.isArray(x.extraHistory)?x.extraHistory:[],
     rate:{...d.rate,...(x.rate||{})}
    };
 
    save();
    renderAll();
-
    toast('Yedek geri yüklendi');
-
   }catch(err){
    toast('Yedek dosyası geçersiz');
   }
@@ -1663,61 +1436,41 @@ function restore(e){
 }
 
 function exportCSV(){
-
  const rows=[
   ['Tür','Ad','Tutar','Para Birimi','Tarih'],
-  ...db.history.map(x=>[
-   'Ödeme',x.name,x.amount,x.currency,
-   new Date(x.paidAt).toISOString()
-  ]),
-  ...db.records.map(x=>[
-   x.type,x.name,x.amount,x.currency,x.due
-  ])
+  ...db.history.map(x=>['Ödeme',x.name,x.amount,x.currency,new Date(x.paidAt).toISOString()]),
+  ...db.records.map(x=>[x.type,x.name,x.amount,x.currency,x.due]),
+  ...db.extraHistory.map(x=>['Ekstra borç ödemesi',x.note||'Kasadan borca',x.amount,x.currency,new Date(x.date).toISOString()])
  ];
 
- const csv=rows.map(r=>
-  r.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(';')
- ).join('\n');
-
+ const csv=rows.map(r=>r.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(';')).join('\n');
  const a=document.createElement('a');
-
- a.href=URL.createObjectURL(
-  new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8'})
- );
-
+ a.href=URL.createObjectURL(new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8'}));
  a.download='timepanel-kayitlar.csv';
  a.click();
-
  setTimeout(()=>URL.revokeObjectURL(a.href),1000);
 }
 
 function resetApp(){
-
  if(!confirm('Tüm uygulama verileri silinsin mi?'))return;
-
  db=defaults();
-
  save();
  renderAll();
- fillFinance();
-
  toast('Uygulama sıfırlandı');
 }
 
 function renderAll(){
-
  renderRate();
  updateUI();
  renderVault();
  renderRecords();
  renderHistory();
+ renderExtraHistory();
  fillFinance();
 }
 
 function tick(){
-
  el('clock').textContent=new Date().toLocaleString('tr-TR');
-
  updateUI();
 
  if(tick.last===undefined||Date.now()-tick.last>1000){
@@ -1728,9 +1481,9 @@ function tick(){
 
 renderAll();
 connectRate();
-
 setInterval(tick,1000);
 
+window.addEventListener('resize',drawCharts);
 window.addEventListener('online',connectRate);
 
 window.addEventListener('beforeunload',()=>{
