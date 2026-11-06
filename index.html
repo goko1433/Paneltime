@@ -8,54 +8,24 @@
 <title>TIMEPANEL PRO</title>
 
 <style>
-:root {
- --bg:#f5f5f5;
- --white:#fff;
- --purple:#b04ba5;
- --purple-light:#dfc1dc;
- --text:#707070;
- --muted:#999;
- --line:#eee;
- --green:#54b98a;
- --red:#df7777;
- --blue:#27a8e8;
+:root{
+--bg:#f5f5f5;--white:#fff;--purple:#b04ba5;
+--purple-light:#dfc1dc;--text:#707070;--muted:#999;
+--line:#eee;--green:#54b98a;--red:#df7777;--blue:#27a8e8;
 }
-
 *{box-sizing:border-box}
-
 body{
- margin:0;
- padding:env(safe-area-inset-top) 0 calc(25px + env(safe-area-inset-bottom));
- background:var(--bg);
- color:var(--text);
- font-family:"Roboto Condensed","Arial Narrow",Arial,sans-serif;
- font-size:13px;
- -webkit-font-smoothing:antialiased;
+margin:0;padding:env(safe-area-inset-top) 0 calc(25px + env(safe-area-inset-bottom));
+background:var(--bg);color:var(--text);
+font-family:"Roboto Condensed","Arial Narrow",Arial,sans-serif;
+font-size:13px;-webkit-font-smoothing:antialiased;
 }
-
 button,input,select{font:inherit}
-
 .wrap{max-width:850px;margin:auto;padding:0 12px}
-
-.top{
- height:66px;
- display:flex;
- justify-content:space-between;
- align-items:center;
- padding:0 5px;
-}
-
-.brand{
- font-size:20px;
- font-weight:700;
- color:var(--purple);
- letter-spacing:.3px;
-}
-
+.top{height:66px;display:flex;justify-content:space-between;align-items:center;padding:0 5px}
+.brand{font-size:20px;font-weight:700;color:var(--purple);letter-spacing:.3px}
 .brand span{color:#777}
-
 .clock{text-align:right;font-size:11px;color:#888;line-height:1.5}
-
 .colorline{height:5px;display:flex;margin-bottom:18px}
 .colorline span{flex:1}
 .colorline span:nth-child(1){background:#b04ba5}
@@ -64,25 +34,12 @@ button,input,select{font:inherit}
 .colorline span:nth-child(4){background:#21a8e5}
 
 .ticker{
- background:white;
- border-radius:9px;
- padding:12px 15px;
- margin-bottom:12px;
- display:flex;
- justify-content:space-between;
- align-items:center;
+background:white;border-radius:9px;padding:12px 15px;margin-bottom:12px;
+display:flex;justify-content:space-between;align-items:center;
 }
-
 .ticker small{font-size:10px;color:#999}
 .ticker strong{display:block;font-size:18px;margin-top:3px;color:#666}
-
-.status{
- font-size:10px;
- padding:5px 8px;
- border-radius:15px;
- border:1px solid #ddd;
-}
-
+.status{font-size:10px;padding:5px 8px;border-radius:15px;border:1px solid #ddd}
 .ok{color:#42a87d;border-color:#9bd9bd}
 .bad{color:#d47777;border-color:#e6b5b5}
 
@@ -90,47 +47,26 @@ button,input,select{font:inherit}
 .span12{grid-column:span 12}
 .span6{grid-column:span 6}
 .span4{grid-column:span 4}
-
-.card{
- background:white;
- border-radius:10px;
- overflow:hidden;
-}
-
+.card{background:white;border-radius:10px;overflow:hidden;animation:cardIn .45s ease both}
+@keyframes cardIn{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
 .card-head{
- min-height:53px;
- display:flex;
- justify-content:space-between;
- align-items:center;
- padding:12px 15px;
- border-bottom:5px solid var(--bg);
+min-height:53px;display:flex;justify-content:space-between;align-items:center;
+padding:12px 15px;border-bottom:5px solid var(--bg)
 }
-
 .section{font-size:15px;font-weight:700;color:var(--purple);margin:0}
 .head-value{font-size:17px;font-weight:700;color:#707070;text-align:right}
 .arrow{color:var(--purple-light);font-size:23px;margin-left:5px}
-
 .card-body{padding:8px 15px 12px}
-
 .balance-row{
- min-height:43px;
- display:flex;
- align-items:center;
- justify-content:space-between;
- gap:10px;
- font-size:13px;
+min-height:43px;display:flex;align-items:center;
+justify-content:space-between;gap:10px;font-size:13px
 }
-
 .balance-row strong{font-size:14px;font-weight:600;white-space:nowrap}
 
 .metrics{
- display:grid;
- grid-template-columns:repeat(3,1fr);
- gap:8px;
- padding:12px 15px 15px;
- border-top:5px solid var(--bg);
+display:grid;grid-template-columns:repeat(3,1fr);gap:8px;
+padding:12px 15px 15px;border-top:5px solid var(--bg)
 }
-
 .metric{min-width:0;padding:5px 0}
 .metric label{display:block;font-size:10px;color:#999;margin-bottom:6px}
 .metric b{font-size:13px;font-weight:600;overflow-wrap:anywhere}
@@ -138,194 +74,113 @@ button,input,select{font:inherit}
 
 .field{display:flex;flex-direction:column;gap:5px;flex:1;min-width:100px;margin-bottom:10px}
 .field label{font-size:11px;color:#888}
-
 .field input,.field select{
- width:100%;
- min-width:0;
- background:#fafafa;
- border:1px solid #e8e8e8;
- border-radius:6px;
- padding:10px;
- color:#555;
- outline:none;
- font-size:13px;
+width:100%;min-width:0;background:#fafafa;border:1px solid #e8e8e8;
+border-radius:6px;padding:10px;color:#555;outline:none;font-size:13px
 }
-
 .field input:focus,.field select:focus{border-color:#c78ac0}
-
 .row{display:flex;gap:9px;flex-wrap:wrap}
-
 .btn{
- border:1px solid #e6d3e4;
- background:white;
- color:var(--purple);
- border-radius:6px;
- padding:9px 12px;
- font-size:11px;
- font-weight:600;
- cursor:pointer;
+border:1px solid #e6d3e4;background:white;color:var(--purple);
+border-radius:6px;padding:9px 12px;font-size:11px;font-weight:600;cursor:pointer;
+transition:all .2s ease
 }
-
+.btn:active{opacity:.65;transform:scale(.97)}
 .primary{background:var(--purple);color:white;border-color:var(--purple)}
 .good{color:#419c75;border-color:#b6dfcc}
 .danger{color:#c66e6e;border-color:#e7c3c3}
 .ghost{background:#f8f8f8}
-.btn:active{opacity:.7}
-
 .notice{font-size:10px;line-height:1.5;color:#999;margin-top:10px}
 
 .list{display:flex;flex-direction:column}
-
 .item{
- display:flex;
- justify-content:space-between;
- align-items:center;
- gap:10px;
- padding:12px 0;
- border-bottom:1px solid #f0f0f0;
+display:flex;justify-content:space-between;align-items:center;gap:10px;
+padding:12px 0;border-bottom:1px solid #f0f0f0;
+animation:itemIn .3s ease
 }
-
+@keyframes itemIn{from{opacity:0;transform:translateX(-5px)}to{opacity:1;transform:translateX(0)}}
 .item:last-child{border-bottom:0}
 .name{font-size:13px;color:#666;font-weight:500;overflow-wrap:anywhere}
 .detail{font-size:10px;color:#aaa;margin-top:4px;line-height:1.5}
 .amount{text-align:right;font-size:13px;font-weight:600;white-space:nowrap}
 .actions{display:flex;justify-content:flex-end;gap:4px;flex-wrap:wrap;margin-top:6px}
 .mini{padding:5px 7px;font-size:10px}
-
 .tabs{display:flex;gap:5px;overflow-x:auto;padding:10px 0}
-.tab{border:1px solid #e9e1e8;background:white;color:#888;border-radius:20px;padding:6px 11px;white-space:nowrap;font-size:10px}
+.tab{
+border:1px solid #e9e1e8;background:white;color:#888;border-radius:20px;
+padding:6px 11px;white-space:nowrap;font-size:10px
+}
 .tab.active{background:#b04ba5;color:white;border-color:#b04ba5}
-
 .empty{text-align:center;padding:20px 8px;color:#aaa;font-size:11px}
 .divider{height:1px;background:#eee;margin:12px 0}
-
 .chart{width:100%;height:165px;display:block}
 .hidden{display:none!important}
-
 .foot{text-align:center;color:#aaa;font-size:10px;padding:18px 0}
-
 .toast{
- position:fixed;
- z-index:99;
- bottom:25px;
- left:50%;
- transform:translateX(-50%);
- background:#555;
- color:white;
- padding:11px 17px;
- border-radius:8px;
- font-size:12px;
- max-width:90%;
- text-align:center;
+position:fixed;z-index:99;bottom:25px;left:50%;transform:translateX(-50%);
+background:#555;color:white;padding:11px 17px;border-radius:8px;
+font-size:12px;max-width:90%;text-align:center;
+animation:toastIn .25s ease
 }
+@keyframes toastIn{from{opacity:0;transform:translate(-50%,10px)}to{opacity:1;transform:translate(-50%,0)}}
 
 .progress-wrap{padding:15px 15px 12px}
-
-.progress-top{
- display:flex;
- justify-content:space-between;
- align-items:center;
- margin-bottom:9px;
-}
-
+.progress-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:9px}
 .progress-top span{font-size:11px;color:#999}
 .progress-top strong{font-size:13px;color:var(--purple)}
-
-.progress{
- height:9px;
- background:#f0edf0;
- border-radius:20px;
- overflow:hidden;
-}
-
+.progress{height:9px;background:#f0edf0;border-radius:20px;overflow:hidden}
 .progress-fill{
- height:100%;
- width:0;
- background:linear-gradient(90deg,#b04ba5,#df9ad4);
- border-radius:20px;
- transition:width 1.2s cubic-bezier(.2,.8,.2,1);
+height:100%;width:0;
+background:linear-gradient(90deg,#b04ba5,#df9ad4);
+border-radius:20px;transition:width 1.3s cubic-bezier(.2,.8,.2,1);
+position:relative
 }
-
-.progress-label{
- display:flex;
- justify-content:space-between;
- margin-top:7px;
- font-size:10px;
- color:#aaa;
+.progress-fill:after{
+content:"";position:absolute;inset:0;
+background:linear-gradient(90deg,transparent,rgba(255,255,255,.45),transparent);
+animation:shine 2.5s infinite
 }
+@keyframes shine{from{transform:translateX(-100%)}to{transform:translateX(100%)}}
+.progress-label{display:flex;justify-content:space-between;margin-top:7px;font-size:10px;color:#aaa}
 
-.extra-payment{
- background:#faf7fa;
- border:1px solid #f0e5ef;
- border-radius:8px;
- padding:11px;
- margin-top:12px;
-}
-
+.extra-payment{background:#faf7fa;border:1px solid #f0e5ef;border-radius:8px;padding:11px;margin-top:12px}
 .extra-payment strong{color:var(--purple);font-size:12px}
 .extra-payment p{font-size:10px;color:#999;line-height:1.5;margin:5px 0 9px}
 
-.donut-area{
- display:flex;
- align-items:center;
- justify-content:center;
- gap:20px;
- padding:12px 5px;
- flex-wrap:wrap;
-}
-
-.donut{
- width:130px;
- height:130px;
- position:relative;
- flex-shrink:0;
-}
-
+.donut-area{display:flex;align-items:center;justify-content:center;gap:20px;padding:12px 5px;flex-wrap:wrap}
+.donut{width:130px;height:130px;position:relative;flex-shrink:0}
 .donut svg{width:100%;height:100%;transform:rotate(-90deg)}
-.donut-center{
- position:absolute;
- inset:0;
- display:flex;
- align-items:center;
- justify-content:center;
- flex-direction:column;
-}
-
+.donut-center{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column}
 .donut-center strong{font-size:17px;color:#666}
 .donut-center small{font-size:9px;color:#aaa}
-
 .legend{display:flex;flex-direction:column;gap:12px}
 .legend-item{display:flex;align-items:center;gap:7px;font-size:11px;color:#888}
 .dot{width:8px;height:8px;border-radius:50%}
-
-.speed-box{
- display:grid;
- grid-template-columns:repeat(2,1fr);
- gap:8px;
- padding:0 15px 14px;
-}
-
+.speed-box{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;padding:0 15px 14px}
 .speed-item{background:#fafafa;padding:10px;border-radius:7px}
 .speed-item small{display:block;color:#999;font-size:10px;margin-bottom:5px}
 .speed-item strong{font-size:14px;color:#666}
-
 .pulse{animation:pulse 2s infinite}
-@keyframes pulse{
- 0%,100%{opacity:1}
- 50%{opacity:.65}
-}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.65}}
 
+.chart-legend{display:flex;justify-content:center;gap:16px;padding:5px 0 10px;font-size:10px;color:#999}
+.chart-legend span{display:flex;align-items:center;gap:5px}
+.chart-legend i{width:7px;height:7px;border-radius:50%;display:inline-block}
+.undo-info{
+background:#f8f3f8;border:1px solid #eee0ed;border-radius:7px;
+padding:9px;margin-top:9px;color:#98718f;font-size:10px;line-height:1.5
+}
 @media(max-width:650px){
- .span6,.span4{grid-column:span 12}
- .metrics{grid-template-columns:repeat(3,1fr)}
- .wrap{padding:0 12px}
+.span6,.span4{grid-column:span 12}
+.metrics{grid-template-columns:repeat(3,1fr)}
+.wrap{padding:0 12px}
 }
-
+@media(prefers-reduced-motion:reduce){
+*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
 </style>
 </head>
-
 <body>
-
 <div class="wrap">
 
 <header class="top">
@@ -367,28 +222,20 @@ button,input,select{font:inherit}
   <h3 class="section">Kalan borç</h3>
   <span class="head-value" id="debtMain">₺0,00</span>
  </div>
-
  <div class="progress-wrap">
   <div class="progress-top">
    <span>Borç ödeme ilerlemesi</span>
    <strong id="progressPercent">%0</strong>
   </div>
-  <div class="progress">
-   <div class="progress-fill" id="debtProgress"></div>
-  </div>
-  <div class="progress-label">
-   <span>Başlangıç</span>
-   <span>Hedef: %100</span>
-  </div>
+  <div class="progress"><div class="progress-fill" id="debtProgress"></div></div>
+  <div class="progress-label"><span>Başlangıç</span><span>Hedef: %100</span></div>
  </div>
-
  <div class="card-body">
   <div class="balance-row"><span>USD karşılığı</span><strong id="debtUsd">-</strong></div>
   <div class="balance-row"><span>Hedef tarihi</span><strong id="targetDate">-</strong></div>
   <div class="balance-row"><span>Aylık borç ödemesi</span><strong id="monthlyDisplay">₺0,00</strong></div>
   <div class="balance-row"><span>Ekstra ödemeler</span><strong id="extraPaidDisplay">₺0,00</strong></div>
  </div>
-
  <div class="metrics">
   <div class="metric"><label>Azalan borç</label><b id="reducedUsd">-</b></div>
   <div class="metric"><label>Hedefe kalan</label><b id="remainingUsd">-</b></div>
@@ -401,7 +248,6 @@ button,input,select{font:inherit}
   <h3 class="section">Borç ödeme analizi</h3>
   <span class="head-value" id="paidPercent">%0</span>
  </div>
-
  <div class="donut-area">
   <div class="donut">
    <svg viewBox="0 0 120 120">
@@ -418,16 +264,9 @@ button,input,select{font:inherit}
    <div class="legend-item"><span class="dot" style="background:#eee"></span><span>Kalan: <b id="legendDebt">₺0</b></span></div>
   </div>
  </div>
-
  <div class="speed-box">
-  <div class="speed-item">
-   <small>Günlük borç azalma hızı</small>
-   <strong id="dailySpeed">₺0</strong>
-  </div>
-  <div class="speed-item">
-   <small>Tahmini bitiş</small>
-   <strong id="estimatedEnd">-</strong>
-  </div>
+  <div class="speed-item"><small>Günlük borç azalma hızı</small><strong id="dailySpeed">₺0</strong></div>
+  <div class="speed-item"><small>Tahmini bitiş</small><strong id="estimatedEnd">-</strong></div>
  </div>
 </section>
 
@@ -440,7 +279,7 @@ button,input,select{font:inherit}
   <div class="balance-row"><span>USD karşılığı</span><strong id="vaultUsd">-</strong></div>
   <div class="balance-row"><span>Kasaya giriş sayısı</span><strong id="vaultCount">0</strong></div>
   <button class="btn good" style="width:100%;margin-top:8px" onclick="transferToVault()">Biriken tutarı kasaya aktar</button>
-  <p class="notice">Kasaya aktarılan tutar, istenildiğinde borç ödemesi olarak kullanılabilir.</p>
+  <p class="notice">Kasaya aktarılan birikim, borç azaltma hesabında dikkate alınır. Aktarım kaydı silinirse tutar borca geri eklenir ve hedef temposu yeniden hesaplanır.</p>
  </div>
 </section>
 
@@ -450,21 +289,14 @@ button,input,select{font:inherit}
   <div class="field"><label>Başlangıç / kalan borç</label><input id="fDebt" type="number" min="0" step="0.01"></div>
   <div class="field">
    <label>Para birimi</label>
-   <select id="fCurrency">
-    <option value="TRY">TRY · Türk lirası</option>
-    <option value="USD">USD · Dolar</option>
-    <option value="EUR">EUR · Euro</option>
-   </select>
+   <select id="fCurrency"><option value="TRY">TRY · Türk lirası</option><option value="USD">USD · Dolar</option><option value="EUR">EUR · Euro</option></select>
   </div>
-  <div class="field"><label>Aylık gelir</label><input id="fIncome" type="number" min="0" step="0.01"><small class="small" id="incomeUsd"></small></div>
-  <div class="field"><label>Aylık borca ayrılan</label><input id="fMonthly" type="number" min="0" step="0.01"><small class="small" id="monthlyUsd"></small></div>
+  <div class="field"><label>Aylık gelir</label><input id="fIncome" type="number" min="0" step="0.01"><small id="incomeUsd"></small></div>
+  <div class="field"><label>Aylık borca ayrılan</label><input id="fMonthly" type="number" min="0" step="0.01"><small id="monthlyUsd"></small></div>
   <div class="field"><label>Borç bitiş hedefi</label><input id="fTarget" type="date"></div>
   <div class="field">
    <label>Hesaplama yöntemi</label>
-   <select id="fMode">
-    <option value="target">Hedef tarihe göre</option>
-    <option value="monthly">Aylık birikime göre</option>
-   </select>
+   <select id="fMode"><option value="target">Hedef tarihe göre</option><option value="monthly">Aylık birikime göre</option></select>
   </div>
   <button class="btn primary" onclick="saveFinance()">Ayarları kaydet</button>
   <button class="btn ghost" onclick="resetAccrual()">Sayacı sıfırla</button>
@@ -475,15 +307,9 @@ button,input,select{font:inherit}
 <section class="card span6">
  <div class="card-head"><h3 class="section">Kasa hareketi ekle</h3></div>
  <div class="card-body">
-  <div class="field">
-   <label>İşlem türü</label>
-   <select id="vType"><option value="in">Para ekle</option><option value="out">Para çek</option></select>
-  </div>
+  <div class="field"><label>İşlem türü</label><select id="vType"><option value="in">Para ekle</option><option value="out">Para çek</option></select></div>
   <div class="field"><label>Tutar</label><input id="vAmount" type="number" min="0.01" step="0.01" placeholder="0,00"></div>
-  <div class="field">
-   <label>Para birimi</label>
-   <select id="vCurrency"><option>TRY</option><option>USD</option><option>EUR</option></select>
-  </div>
+  <div class="field"><label>Para birimi</label><select id="vCurrency"><option>TRY</option><option>USD</option><option>EUR</option></select></div>
   <div class="field"><label>Açıklama</label><input id="vNote" placeholder="Açıklama"></div>
   <button class="btn primary" onclick="addVault()">Kasaya işle</button>
   <div class="divider"></div>
@@ -524,12 +350,18 @@ button,input,select{font:inherit}
 
 <section class="card span6">
  <div class="card-head"><h3 class="section">Borç grafiği</h3></div>
- <div class="card-body"><canvas id="financeChart" class="chart"></canvas></div>
+ <div class="card-body">
+  <canvas id="financeChart" class="chart"></canvas>
+  <div class="chart-legend"><span><i style="background:#b04ba5"></i>Borç değişimi</span></div>
+ </div>
 </section>
 
 <section class="card span6">
  <div class="card-head"><h3 class="section">Kasa grafiği</h3></div>
- <div class="card-body"><canvas id="vaultChart" class="chart"></canvas></div>
+ <div class="card-body">
+  <canvas id="vaultChart" class="chart"></canvas>
+  <div class="chart-legend"><span><i style="background:#27a8e8"></i>Kasa bakiyesi</span></div>
+ </div>
 </section>
 
 <section class="card span6">
@@ -550,19 +382,16 @@ button,input,select{font:inherit}
   <p class="notice">Veriler cihazınızın tarayıcısında saklanır. Safari verileri silinirse yedek olmadan kaybolabilir. Düzenli JSON yedeği alın.</p>
  </div>
 </section>
-
 </div>
 
 <div class="foot">TIMEPANEL PRO · Finansal takip ve kontrol paneli</div>
 </div>
-
 <div id="toast" class="toast hidden"></div>
 
 <script>
 'use strict';
 
 const KEY='timepanel_pro_binance_v3';
-
 const defaults=()=>({
  finance:{
   initial:0,remaining:0,currency:'TRY',
@@ -570,14 +399,12 @@ const defaults=()=>({
   startedAt:Date.now(),lastAccrual:Date.now(),
   transferred:0,extraPaid:0
  },
- vault:[],
- records:[],
- history:[],
- extraHistory:[],
+ vault:[],records:[],history:[],extraHistory:[],
  rate:{usdttry:0,eurtry:0,updated:0}
 });
 
 let db=load(),socket=null,reconnectTimer=null,filter='all',manualClose=false;
+let chartAnimation={};
 
 function load(){
  try{
@@ -609,10 +436,7 @@ function money(v,c='TRY'){
  try{return new Intl.NumberFormat('tr-TR',{style:'currency',currency:c,maximumFractionDigits:2}).format(n(v))}
  catch(e){return num(v)+' '+c}
 }
-
-function num(v){
- return new Intl.NumberFormat('tr-TR',{maximumFractionDigits:2}).format(n(v));
-}
+function num(v){return new Intl.NumberFormat('tr-TR',{maximumFractionDigits:2}).format(n(v))}
 
 function tryValue(v,c){
  if(c==='TRY')return n(v);
@@ -620,18 +444,15 @@ function tryValue(v,c){
  if(c==='EUR')return n(v)*(db.rate.eurtry||0);
  return 0;
 }
-
 function fromTRY(v,c){
  if(c==='TRY')return v;
  const r=c==='USD'?db.rate.usdttry:db.rate.eurtry;
  return r>0?v/r:0;
 }
-
 function usdValue(v,c){
  const r=db.rate.usdttry||0;
  return r>0?tryValue(v,c)/r:null;
 }
-
 function usdText(v,c){
  const x=usdValue(v,c);
  return x===null?'USD kuru bekleniyor':'≈ '+money(x,'USD');
@@ -642,13 +463,14 @@ function toast(s){
  e.textContent=s;
  e.classList.remove('hidden');
  clearTimeout(toast.t);
- toast.t=setTimeout(()=>e.classList.add('hidden'),2400);
+ toast.t=setTimeout(()=>e.classList.add('hidden'),2600);
 }
+
+/* BORÇ HESAPLAMA */
 
 function accrued(){
  const f=db.finance;
  if(!f.lastAccrual||n(f.remaining)<=0)return 0;
-
  const elapsed=Math.max(0,Date.now()-n(f.lastAccrual));
  let per=0;
 
@@ -661,74 +483,52 @@ function accrued(){
  }else{
   per=n(f.monthly)/(30.4375*86400000);
  }
-
  return Math.min(n(f.remaining),elapsed*per);
 }
 
 function remaining(){
  return Math.max(0,n(db.finance.remaining)-accrued());
 }
-
 function reduced(){
  return Math.max(0,n(db.finance.initial)-remaining());
 }
-
 function availableAccrual(){
  return Math.max(0,accrued()-n(db.finance.transferred));
 }
-
 function balance(c){
  return db.vault.filter(v=>v.currency===c).reduce(
   (s,v)=>s+(v.type==='out'?-n(v.amount):n(v.amount)),0
  );
 }
-
 function vaultTotalTRY(){
  return ['TRY','USD','EUR'].reduce((s,c)=>s+tryValue(balance(c),c),0);
 }
-
 function daysLeft(){
  const t=db.finance.target;
  if(!t)return 0;
  return Math.max(0,Math.ceil((new Date(t+'T23:59:59').getTime()-Date.now())/86400000));
 }
-
 function dailyRate(){
- const f=db.finance;
- const r=remaining();
+ const f=db.finance,r=remaining();
  if(r<=0)return 0;
-
- if(f.mode==='target'&&f.target&&daysLeft()>0){
-  return r/daysLeft();
- }
-
+ if(f.mode==='target'&&f.target&&daysLeft()>0)return r/daysLeft();
  return n(f.monthly)/30.4375;
 }
-
 function estimatedFinish(){
- const f=db.finance;
- const r=remaining();
- const speed=dailyRate();
-
+ const r=remaining(),speed=dailyRate();
  if(r<=0)return 'Tamamlandı';
  if(speed<=0)return '-';
-
- const date=new Date(Date.now()+r/speed*86400000);
- return date.toLocaleDateString('tr-TR');
+ return new Date(Date.now()+r/speed*86400000).toLocaleDateString('tr-TR');
 }
 
-function updateUI(){
+/* ANİMASYONLU ARAYÜZ */
 
- const f=db.finance;
- const r=remaining();
- const d=reduced();
- const a=availableAccrual();
- const c=f.currency;
+function updateUI(){
+ const f=db.finance,r=remaining(),d=reduced(),a=availableAccrual(),c=f.currency;
  const transferred=n(f.transferred);
 
  el('debtMain').textContent=money(r,c);
  el('debtUsd').textContent=usdText(r,c);
-
  el('reduced').textContent=money(d,c);
  el('available').textContent=money(a,c);
  el('transferredDisplay').textContent=money(transferred,c);
@@ -743,14 +543,12 @@ function updateUI(){
 
  const days=daysLeft();
  el('remainingDays').textContent=f.target?(days+' gün'):'-';
-
  el('targetDate').textContent=f.target?
   new Date(f.target+'T00:00:00').toLocaleDateString('tr-TR'):'-';
 
  el('debtStatus').textContent=r<=0?'Tamamlandı':'Aktif';
 
  const percent=f.initial>0?Math.min(100,Math.max(0,d/f.initial*100)):0;
-
  el('progressPercent').textContent='%'+num(percent);
  el('paidPercent').textContent='%'+num(percent);
  el('donutPercent').textContent='%'+num(percent);
@@ -758,11 +556,11 @@ function updateUI(){
 
  const circumference=2*Math.PI*48;
  const dash=circumference*percent/100;
+ el('donutPaid').style.transition='stroke-dasharray 1.2s ease';
  el('donutPaid').setAttribute('stroke-dasharray',dash+' '+circumference);
 
  el('legendPaid').textContent=money(d,c);
  el('legendDebt').textContent=money(r,c);
-
  el('dailySpeed').textContent=money(dailyRate(),c);
  el('estimatedEnd').textContent=estimatedFinish();
 
@@ -780,58 +578,40 @@ function renderRate(){
  el('rateMeta').textContent=r>0?
   '1 USDT ≈ '+num(r)+' TL · '+new Date(db.rate.updated).toLocaleTimeString('tr-TR'):
   'Binance TR akışından fiyat bekleniyor';
-
- if(r>0&&Date.now()-db.rate.updated>300000){
-  el('rateMeta').textContent+=' · SON FİYAT ESKİ';
- }
+ if(r>0&&Date.now()-db.rate.updated>300000)el('rateMeta').textContent+=' · SON FİYAT ESKİ';
 }
-
 function setStatus(s,k=''){
  el('wsStatus').textContent=s;
  el('wsStatus').className='status '+k;
 }
-
 function setRate(price,symbol){
  if(!Number.isFinite(price)||price<=0)return;
-
  if(symbol==='USDTTRY')db.rate.usdttry=price;
  if(symbol==='EURTRY')db.rate.eurtry=price;
-
  db.rate.updated=Date.now();
- save();
- renderRate();
- updateUI();
- renderVault();
+ save();renderRate();updateUI();renderVault();
 }
+
+/* CANLI KUR */
 
 function connectRate(){
  manualClose=false;
  clearTimeout(reconnectTimer);
-
- if(socket){
-  socket.onclose=null;
-  try{socket.close()}catch(e){}
- }
-
+ if(socket){socket.onclose=null;try{socket.close()}catch(e){}}
  setStatus('BAĞLANIYOR');
-
  try{
   socket=new WebSocket('wss://stream-cloud.binance.tr/stream?streams=usdttry@trade/eurtry@trade');
   socket.onopen=()=>setStatus('BAĞLI','ok');
-
   socket.onmessage=e=>{
    try{
-    const m=JSON.parse(e.data);
-    const d=m.data||m;
+    const m=JSON.parse(e.data),d=m.data||m;
     if(d.e==='trade'){
      if(d.s==='USDTTRY')setRate(Number(d.p),'USDTTRY');
      if(d.s==='EURTRY')setRate(Number(d.p),'EURTRY');
     }
    }catch(err){}
   };
-
   socket.onerror=()=>setStatus('AKIŞ HATASI','bad');
-
   socket.onclose=()=>{
    if(!manualClose){
     setStatus('YENİDEN BAĞLANIYOR','bad');
@@ -844,24 +624,20 @@ function connectRate(){
  }
 }
 
+/* FİNANS AYARLARI */
+
 function saveFinance(){
  const f=db.finance;
  const v=Math.max(0,n(el('fDebt').value));
-
- f.initial=v;
- f.remaining=v;
+ f.initial=v;f.remaining=v;
  f.currency=el('fCurrency').value;
  f.income=Math.max(0,n(el('fIncome').value));
  f.monthly=Math.max(0,n(el('fMonthly').value));
  f.target=el('fTarget').value;
  f.mode=el('fMode').value;
  f.startedAt=f.lastAccrual=Date.now();
- f.transferred=0;
- f.extraPaid=0;
-
- save();
- updateUI();
- renderExtraHistory();
+ f.transferred=0;f.extraPaid=0;
+ save();updateUI();renderExtraHistory();
  toast('Finans ayarları kaydedildi');
 }
 
@@ -876,77 +652,52 @@ function fillFinance(){
 }
 
 function resetAccrual(){
- const r=remaining();
- const f=db.finance;
- f.initial=r;
- f.remaining=r;
+ const r=remaining(),f=db.finance;
+ f.initial=r;f.remaining=r;
  f.startedAt=f.lastAccrual=Date.now();
- f.transferred=0;
- f.extraPaid=0;
- save();
- updateUI();
- toast('Birikim sayacı sıfırlandı');
+ f.transferred=0;f.extraPaid=0;
+ save();updateUI();toast('Birikim sayacı sıfırlandı');
 }
+
+/* KASAYA AKTARIM */
 
 function transferToVault(){
  const f=db.finance;
  const a=Math.floor(availableAccrual()*100)/100;
-
- if(a<=0){
-  toast('Aktarılacak birikim yok');
-  return;
- }
+ if(a<=0){toast('Aktarılacak birikim yok');return}
 
  db.vault.unshift({
   id:id(),type:'in',amount:a,currency:f.currency,
   note:'Borç birikiminden kasaya aktarıldı',
   date:Date.now(),source:'accrual'
  });
-
  f.transferred+=a;
- save();
- renderVault();
- updateUI();
+ save();renderVault();updateUI();
  toast(money(a,f.currency)+' kasaya aktarıldı');
 }
 
+/* KASADAN BORÇ ÖDEME */
+
 function applyVaultToDebt(i){
  const v=db.vault[i];
- if(!v||v.type!=='in'){
-  toast('Bu işlem borç ödemesinde kullanılamaz');
-  return;
- }
+ if(!v||v.type!=='in'){toast('Bu işlem borç ödemesinde kullanılamaz');return}
+ if(v.source==='debtPayment'){toast('Bu kayıt zaten borç ödemesi');return}
 
  const f=db.finance;
  const available=balance(v.currency);
-
- if(available<n(v.amount)){
-  toast('Bu para kasada artık mevcut değil');
-  return;
- }
+ if(available<n(v.amount)){toast('Bu para kasada artık mevcut değil');return}
 
  const valueTRY=tryValue(v.amount,v.currency);
  const payment=fromTRY(valueTRY,f.currency);
+ if(payment<=0){toast('Gerekli döviz kuru henüz alınmadı');return}
 
- if(payment<=0){
-  toast('Gerekli döviz kuru henüz alınmadı');
-  return;
- }
-
- const current=remaining();
- const actual=Math.min(current,payment);
-
- if(actual<=0){
-  toast('Ödenecek borç kalmamış');
-  return;
- }
+ const current=remaining(),actual=Math.min(current,payment);
+ if(actual<=0){toast('Ödenecek borç kalmamış');return}
 
  const convertedTRY=tryValue(actual,f.currency);
  const cashDeduction=fromTRY(convertedTRY,v.currency);
-
  if(cashDeduction<=0||cashDeduction>available+0.000001){
-  toast('Dönüşüm veya kasa bakiyesi yetersiz');
-  return;
+  toast('Dönüşüm veya kasa bakiyesi yetersiz');return;
  }
 
  if(!confirm(
@@ -955,61 +706,137 @@ function applyVaultToDebt(i){
   'Kalan borç: '+money(current-actual,f.currency)
  ))return;
 
- // Önce birikmiş zaman farkını sabitle.
  f.remaining=current;
  f.lastAccrual=Date.now();
-
- // Ekstra ödeme borç bakiyesini anında düşürür.
  f.remaining=Math.max(0,f.remaining-actual);
  f.extraPaid=n(f.extraPaid)+actual;
 
- // Yeni hedef temposu, yeni kalan borca göre hesaplanır.
  db.vault.unshift({
-  id:id(),
-  type:'out',
-  amount:cashDeduction,
-  currency:v.currency,
-  note:'Borç ödemesi: '+money(actual,f.currency),
-  date:Date.now(),
-  source:'debtPayment'
+  id:id(),type:'out',amount:cashDeduction,
+  currency:v.currency,note:'Borç ödemesi: '+money(actual,f.currency),
+  date:Date.now(),source:'debtPayment'
  });
 
  db.extraHistory.unshift({
-  id:id(),
-  amount:actual,
-  currency:f.currency,
-  cashAmount:cashDeduction,
-  cashCurrency:v.currency,
-  date:Date.now(),
-  note:'Kasadan borca aktarıldı'
+  id:id(),amount:actual,currency:f.currency,
+  cashAmount:cashDeduction,cashCurrency:v.currency,
+  date:Date.now(),note:'Kasadan borca aktarıldı'
  });
 
- save();
- renderAll();
+ save();renderAll();
  toast('Borç ödemesi yapıldı. Yeni tempo hesaplandı.');
 }
 
 function addVault(){
- const a=n(el('vAmount').value);
- const c=el('vCurrency').value;
- const t=el('vType').value;
-
+ const a=n(el('vAmount').value),c=el('vCurrency').value,t=el('vType').value;
  if(a<=0){toast('Geçerli tutar gir');return}
  if(t==='out'&&balance(c)<a){toast('Yeterli kasa bakiyesi yok');return}
 
  db.vault.unshift({
   id:id(),type:t,amount:a,currency:c,
-  note:el('vNote').value.trim(),
-  date:Date.now(),source:'manual'
+  note:el('vNote').value.trim(),date:Date.now(),source:'manual'
  });
+ el('vAmount').value='';el('vNote').value='';
+ save();renderVault();updateUI();toast('Kasa hareketi eklendi');
+}
 
- el('vAmount').value='';
- el('vNote').value='';
+/* KRİTİK: AKTARIMI SİLEREK BORCU GERİ YÜKLEME */
 
- save();
- renderVault();
- updateUI();
- toast('Kasa hareketi eklendi');
+function deleteVault(i){
+ const v=db.vault[i];
+ if(!v)return;
+
+ if(v.source==='debtPayment'){
+  toast('Borç ödeme kayıtları doğrudan silinemez');return;
+ }
+
+ if(v.source==='accrual'){
+  const f=db.finance;
+  const amount=n(v.amount);
+
+  if(!confirm(
+   'Kasaya aktarılan '+money(amount,v.currency)+' geri alınsın mı?\n\n'+
+   '• Tutar kasadan silinecek.\n'+
+   '• Borç bakiyesine geri eklenecek.\n'+
+   '• Günlük borç azaltma hızı yeniden hesaplanacak.\n'+
+   '• Hedef tarihi korunacak.'
+  ))return;
+
+  /*
+   * ÖNEMLİ:
+   * Önce mevcut borç bakiyesi hesaplanır.
+   * Birikmiş zaman farkı sabitlenir.
+   * Aktarılan tutar borca geri eklenir.
+   * Zaman sayacı sıfırlanarak kalan süreye göre
+   * yeni günlük azaltma hızı hesaplanır.
+   */
+
+  const current=remaining();
+
+  if(v.currency===f.currency){
+   f.remaining=current+amount;
+  }else{
+   const tl=tryValue(amount,v.currency);
+   const converted=fromTRY(tl,f.currency);
+   if(converted<=0){toast('Kur dönüşümü yapılamadı');return}
+   f.remaining=current+converted;
+  }
+
+  f.lastAccrual=Date.now();
+  f.transferred=Math.max(0,n(f.transferred)-amount);
+
+  // Geri alma hareketini ayrıca kaydet.
+  db.history.unshift({
+   id:id(),
+   name:'Kasaya aktarım geri alındı',
+   amount:amount,
+   currency:v.currency,
+   paidAt:Date.now(),
+   type:'transferUndo'
+  });
+
+  db.vault.splice(i,1);
+  save();
+  renderAll();
+
+  toast('Aktarım geri alındı. Borç ve günlük hız güncellendi.');
+  return;
+ }
+
+ if(!confirm('Kasa hareketi silinsin mi?'))return;
+
+ const oldBalance=balance(v.currency);
+ const signed=v.type==='out'?-n(v.amount):n(v.amount);
+
+ if(oldBalance-signed<-.00001){
+  toast('Bu hareket silinirse kasa bakiyesi negatif olur');return;
+ }
+
+ db.vault.splice(i,1);
+ save();renderVault();updateUI();
+ toast('Kasa hareketi silindi');
+}
+
+function editVault(i){
+ const v=db.vault[i];
+ if(!v)return;
+ if(v.source==='debtPayment'||v.source==='accrual'){
+  toast('Otomatik kayıtlar güvenli olması için doğrudan düzenlenemez');return;
+ }
+ const a=prompt('Yeni tutar',v.amount);
+ if(a===null)return;
+ const x=n(a);
+ if(x<=0){toast('Tutar geçersiz');return}
+ const note=prompt('Açıklama',v.note||'');
+ if(note===null)return;
+
+ const old=v.type==='out'?-v.amount:v.amount;
+ const neu=v.type==='out'?-x:x;
+ if(balance(v.currency)-old+neu<-.00001){
+  toast('Bakiye negatife düşer');return;
+ }
+ v.amount=x;v.note=note;
+ save();renderVault();updateUI();
 }
 
 function esc(s){
@@ -1020,206 +847,101 @@ function esc(s){
 
 function renderVault(){
  const e=el('vaultList');
-
  if(!db.vault.length){
-  e.innerHTML='<div class="empty">Henüz kasa hareketi yok.</div>';
-  return;
+  e.innerHTML='<div class="empty">Henüz kasa hareketi yok.</div>';return;
  }
-
  e.innerHTML=db.vault.slice(0,60).map((v,i)=>`
   <div class="item">
    <div>
     <div class="name">${esc(v.note||'Kasa hareketi')}</div>
     <div class="detail">${new Date(v.date).toLocaleString('tr-TR')} · ${v.currency}</div>
+    ${v.source==='accrual'?'<div class="detail" style="color:#b04ba5">Geri alınabilir aktarım</div>':''}
    </div>
    <div>
     <div class="amount">${v.type==='out'?'−':'+'}${money(v.amount,v.currency)}</div>
     <div class="detail">${usdText(v.amount,v.currency)}</div>
     <div class="actions">
-     ${v.type==='in'?`<button class="btn good mini" onclick="applyVaultToDebt(${i})">Borçtan düş</button>`:''}
+     ${v.type==='in'&&v.source!=='debtPayment'?`<button class="btn good mini" onclick="applyVaultToDebt(${i})">Borçtan düş</button>`:''}
      <button class="btn mini" onclick="editVault(${i})">Düzenle</button>
-     <button class="btn danger mini" onclick="deleteVault(${i})">Sil</button>
+     ${v.source==='accrual'?`<button class="btn danger mini" onclick="deleteVault(${i})">Geri al</button>`:`<button class="btn danger mini" onclick="deleteVault(${i})">Sil</button>`}
     </div>
    </div>
   </div>
  `).join('');
 }
 
-function editVault(i){
- const v=db.vault[i];
- if(!v)return;
-
- if(v.source==='debtPayment'){
-  toast('Borç ödeme kayıtları doğrudan düzenlenemez');
-  return;
- }
-
- const a=prompt('Yeni tutar',v.amount);
- if(a===null)return;
- const x=n(a);
- if(x<=0){toast('Tutar geçersiz');return}
-
- const note=prompt('Açıklama',v.note||'');
- if(note===null)return;
-
- const old=v.type==='out'?-v.amount:v.amount;
- const neu=v.type==='out'?-x:x;
-
- if(balance(v.currency)-old+neu<-.00001){
-  toast('Bakiye negatife düşer');
-  return;
- }
-
- if(v.source==='accrual'){
-  db.finance.transferred=Math.max(0,n(db.finance.transferred)+x-v.amount);
- }
-
- v.amount=x;
- v.note=note;
-
- save();
- renderVault();
- updateUI();
-}
-
-function deleteVault(i){
- const v=db.vault[i];
- if(!v||!confirm('Kasa hareketi silinsin mi?'))return;
-
- if(v.source==='debtPayment'){
-  toast('Borç ödeme hareketi doğrudan silinemez');
-  return;
- }
-
- if(v.source==='accrual'){
-  db.finance.transferred=Math.max(0,n(db.finance.transferred)-v.amount);
- }
-
- db.vault.splice(i,1);
- save();
- renderVault();
- updateUI();
-}
+/* ÖDEME VE HATIRLATMALAR */
 
 function addRecord(){
- const name=el('rName').value.trim();
- const due=el('rDue').value;
-
+ const name=el('rName').value.trim(),due=el('rDue').value;
  if(!name||!due){toast('Kayıt adı ve tarih gerekli');return}
-
  db.records.push({
-  id:id(),name,
-  amount:Math.max(0,n(el('rAmount').value)),
-  currency:db.finance.currency,due,
-  type:el('rType').value,
-  repeat:el('rRepeat').value,
-  note:el('rNote').value.trim(),done:false
+  id:id(),name,amount:Math.max(0,n(el('rAmount').value)),
+  currency:db.finance.currency,due,type:el('rType').value,
+  repeat:el('rRepeat').value,note:el('rNote').value.trim(),done:false
  });
-
  ['rName','rAmount','rDue','rNote'].forEach(k=>el(k).value='');
- save();
- renderRecords();
- toast('Kayıt eklendi');
+ save();renderRecords();toast('Kayıt eklendi');
 }
 
 function setFilter(f,b){
  filter=f;
  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
- b.classList.add('active');
- renderRecords();
+ b.classList.add('active');renderRecords();
 }
 
 function nextDue(r){
- const d=new Date(r.due+'T12:00:00');
- const day=d.getDate();
-
+ const d=new Date(r.due+'T12:00:00'),day=d.getDate();
  if(r.repeat==='monthly'){
-  d.setDate(1);
-  d.setMonth(d.getMonth()+1);
+  d.setDate(1);d.setMonth(d.getMonth()+1);
   d.setDate(Math.min(day,new Date(d.getFullYear(),d.getMonth()+1,0).getDate()));
- }else if(r.repeat==='yearly'){
-  d.setFullYear(d.getFullYear()+1);
- }
-
+ }else if(r.repeat==='yearly')d.setFullYear(d.getFullYear()+1);
  return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
 }
 
 function pay(rid){
  const i=db.records.findIndex(r=>r.id===rid);
  if(i<0)return;
-
  const r=db.records[i];
  if(!confirm(r.name+' ödendi olarak işaretlensin mi?'))return;
-
  db.history.unshift({
-  id:id(),name:r.name,amount:r.amount,
-  currency:r.currency,paidAt:Date.now()
+  id:id(),name:r.name,amount:r.amount,currency:r.currency,paidAt:Date.now()
  });
-
- if(r.repeat==='none'){
-  db.records.splice(i,1);
- }else{
-  let d=nextDue(r);
-  const today=new Date().toISOString().slice(0,10);
-  let guard=0;
+ if(r.repeat==='none')db.records.splice(i,1);
+ else{
+  let d=nextDue(r),today=new Date().toISOString().slice(0,10),guard=0;
   while(d<today&&guard++<240)d=nextDue({...r,due:d});
   r.due=d;
  }
-
- save();
- renderRecords();
- renderHistory();
- toast('Ödeme geçmişe eklendi');
+ save();renderRecords();renderHistory();toast('Ödeme geçmişe eklendi');
 }
 
 function editRecord(rid){
  const r=db.records.find(x=>x.id===rid);
  if(!r)return;
-
- const name=prompt('Kayıt adı',r.name);
- if(name===null)return;
- const amount=prompt('Tutar',r.amount);
- if(amount===null)return;
- const due=prompt('Vade YYYY-AA-GG',r.due);
- if(due===null)return;
-
- if(!/^\d{4}-\d{2}-\d{2}$/.test(due)){
-  toast('Tarih biçimi geçersiz');
-  return;
- }
-
- r.name=name.trim()||r.name;
- r.amount=Math.max(0,n(amount));
- r.due=due;
- save();
- renderRecords();
+ const name=prompt('Kayıt adı',r.name);if(name===null)return;
+ const amount=prompt('Tutar',r.amount);if(amount===null)return;
+ const due=prompt('Vade YYYY-AA-GG',r.due);if(due===null)return;
+ if(!/^\d{4}-\d{2}-\d{2}$/.test(due)){toast('Tarih biçimi geçersiz');return}
+ r.name=name.trim()||r.name;r.amount=Math.max(0,n(amount));r.due=due;
+ save();renderRecords();
 }
-
 function deleteRecord(rid){
  if(!confirm('Kayıt silinsin mi?'))return;
  db.records=db.records.filter(x=>x.id!==rid);
- save();
- renderRecords();
+ save();renderRecords();
 }
 
 function renderRecords(){
- const e=el('recordList');
- const now=new Date();
+ const e=el('recordList'),now=new Date();
  const today=new Date(now.getFullYear(),now.getMonth(),now.getDate());
-
  let a=db.records.filter(r=>
   filter==='all'||
   (filter==='late'&&new Date(r.due+'T00:00:00')<today)||
   r.type===filter
  );
-
  a.sort((x,y)=>x.due.localeCompare(y.due));
-
- if(!a.length){
-  e.innerHTML='<div class="empty">Bu bölümde kayıt yok.</div>';
-  return;
- }
-
+ if(!a.length){e.innerHTML='<div class="empty">Bu bölümde kayıt yok.</div>';return}
  e.innerHTML=a.map(r=>{
   const late=new Date(r.due+'T00:00:00')<today;
   return `
@@ -1236,18 +958,13 @@ function renderRecords(){
       <button class="btn danger mini" onclick="deleteRecord('${r.id}')">Sil</button>
      </div>
     </div>
-   </div>
-  `;
+   </div>`;
  }).join('');
 }
 
 function renderHistory(){
  const e=el('historyList');
- if(!db.history.length){
-  e.innerHTML='<div class="empty">Henüz ödeme geçmişi yok.</div>';
-  return;
- }
-
+ if(!db.history.length){e.innerHTML='<div class="empty">Henüz ödeme geçmişi yok.</div>';return}
  e.innerHTML=db.history.slice(0,40).map((h,i)=>`
   <div class="item">
    <div>
@@ -1264,34 +981,21 @@ function renderHistory(){
   </div>
  `).join('');
 }
-
 function editHistory(i){
- const h=db.history[i];
- if(!h)return;
- const name=prompt('Ödeme adı',h.name);
- if(name===null)return;
- const a=prompt('Tutar',h.amount);
- if(a===null)return;
- h.name=name;
- h.amount=Math.max(0,n(a));
- save();
- renderHistory();
+ const h=db.history[i];if(!h)return;
+ const name=prompt('Ödeme adı',h.name);if(name===null)return;
+ const a=prompt('Tutar',h.amount);if(a===null)return;
+ h.name=name;h.amount=Math.max(0,n(a));
+ save();renderHistory();
 }
-
 function deleteHistory(i){
  if(!confirm('Geçmiş kaydı silinsin mi?'))return;
- db.history.splice(i,1);
- save();
- renderHistory();
+ db.history.splice(i,1);save();renderHistory();
 }
 
 function renderExtraHistory(){
  const e=el('extraHistory');
- if(!db.extraHistory.length){
-  e.innerHTML='<div class="empty">Henüz ekstra borç ödemesi yok.</div>';
-  return;
- }
-
+ if(!db.extraHistory.length){e.innerHTML='<div class="empty">Henüz ekstra borç ödemesi yok.</div>';return}
  e.innerHTML=db.extraHistory.slice(0,40).map(x=>`
   <div class="item">
    <div>
@@ -1306,133 +1010,124 @@ function renderExtraHistory(){
  `).join('');
 }
 
+/* ANİMASYONLU GRAFİKLER */
+
 function drawCharts(){
  const f=db.finance;
- drawLine(
-  'financeChart',
-  [n(f.initial),remaining(),0],
-  ['Başlangıç','Şimdi','Hedef']
- );
+ const debtNow=remaining();
+ drawLine('financeChart',[n(f.initial),Math.max(0,(n(f.initial)+debtNow)/2),debtNow,0],
+ ['Başlangıç','Ara','Şimdi','Hedef'],'#b04ba5');
 
  const c=f.currency;
  let v=[0],sum=0;
-
  db.vault.slice().reverse().filter(x=>x.currency===c).forEach(x=>{
   sum+=x.type==='out'?-n(x.amount):n(x.amount);
   v.push(sum);
  });
-
- drawLine('vaultChart',v.slice(-12),v.slice(-12).map((_,i)=>String(i+1)));
+ drawLine('vaultChart',v.slice(-12),v.slice(-12).map((_,i)=>String(i+1)),'#27a8e8');
 }
 
-function drawLine(id,values,labels){
- const c=el(id);
+function drawLine(canvasId,values,labels,color){
+ const c=el(canvasId);
  if(!c)return;
-
  const d=window.devicePixelRatio||1;
- const w=c.clientWidth||300;
- const h=165;
- c.width=w*d;
- c.height=h*d;
-
+ const w=c.clientWidth||300,h=165;
+ c.width=w*d;c.height=h*d;
  const x=c.getContext('2d');
  x.setTransform(d,0,0,d,0,0);
  x.clearRect(0,0,w,h);
 
- const p=22;
- const max=Math.max(1,...values);
- const min=Math.min(0,...values);
+ const p=22,max=Math.max(1,...values),min=Math.min(0,...values);
  const range=Math.max(1,max-min);
 
- x.strokeStyle='#eeeeee';
- x.lineWidth=1;
-
+ x.strokeStyle='#eeeeee';x.lineWidth=1;
  for(let i=0;i<4;i++){
   const y=p+(h-p*2)*i/3;
-  x.beginPath();
-  x.moveTo(p,y);
-  x.lineTo(w-p,y);
-  x.stroke();
+  x.beginPath();x.moveTo(p,y);x.lineTo(w-p,y);x.stroke();
  }
 
  if(values.length<2)return;
+ const key=canvasId;
+ if(!chartAnimation[key])chartAnimation[key]=0;
+ const start=performance.now(),duration=850;
 
- const points=values.map((v,i)=>({
-  px:p+(w-p*2)*i/(values.length-1),
-  py:h-p-(v-min)/range*(h-p*2)
- }));
+ function frame(now){
+  const t=Math.min(1,(now-start)/duration);
+  const progress=1-Math.pow(1-t,3);
+  x.clearRect(0,0,w,h);
+  x.strokeStyle='#eeeeee';
+  for(let i=0;i<4;i++){
+   const y=p+(h-p*2)*i/3;
+   x.beginPath();x.moveTo(p,y);x.lineTo(w-p,y);x.stroke();
+  }
 
- x.beginPath();
- points.forEach((pt,i)=>i?x.lineTo(pt.px,pt.py):x.moveTo(pt.px,pt.py));
- x.lineTo(points[points.length-1].px,h-p);
- x.lineTo(points[0].px,h-p);
- x.closePath();
- const grad=x.createLinearGradient(0,0,0,h);
- grad.addColorStop(0,'rgba(176,75,165,.19)');
- grad.addColorStop(1,'rgba(176,75,165,0)');
- x.fillStyle=grad;
- x.fill();
+  const points=values.map((v,i)=>({
+   px:p+(w-p*2)*i/(values.length-1),
+   py:h-p-(v-min)/range*(h-p*2)
+  }));
 
- x.beginPath();
- points.forEach((pt,i)=>i?x.lineTo(pt.px,pt.py):x.moveTo(pt.px,pt.py));
- x.strokeStyle='#b04ba5';
- x.lineWidth=2;
- x.stroke();
+  const visible=points.map((pt,i)=>({
+   px:pt.px,
+   py:h-p+(pt.py-(h-p))*progress
+  }));
 
- points.forEach((pt,i)=>{
   x.beginPath();
-  x.arc(pt.px,pt.py,3,0,Math.PI*2);
-  x.fillStyle='#b04ba5';
-  x.fill();
-  x.fillStyle='#999';
-  x.font='10px Arial';
-  x.textAlign='center';
-  x.fillText(labels[i]||'',pt.px,h-4);
- });
+  visible.forEach((pt,i)=>i?x.lineTo(pt.px,pt.py):x.moveTo(pt.px,pt.py));
+  x.lineTo(visible[visible.length-1].px,h-p);
+  x.lineTo(visible[0].px,h-p);
+  x.closePath();
+
+  const grad=x.createLinearGradient(0,0,0,h);
+  grad.addColorStop(0,color===' #27a8e8'?'rgba(39,168,232,.18)':'rgba(176,75,165,.18)');
+  grad.addColorStop(1,'rgba(176,75,165,0)');
+  x.fillStyle=grad;x.fill();
+
+  x.beginPath();
+  visible.forEach((pt,i)=>i?x.lineTo(pt.px,pt.py):x.moveTo(pt.px,pt.py));
+  x.strokeStyle=color;x.lineWidth=2;x.lineJoin='round';x.stroke();
+
+  visible.forEach((pt,i)=>{
+   x.beginPath();x.arc(pt.px,pt.py,3,0,Math.PI*2);
+   x.fillStyle=color;x.fill();
+   x.fillStyle='#999';x.font='10px Arial';x.textAlign='center';
+   x.fillText(labels[i]||'',pt.px,h-4);
+  });
+
+  if(t<1)requestAnimationFrame(frame);
+ }
+ requestAnimationFrame(frame);
 }
+
+/* YEDEKLEME */
 
 function backup(){
  const b=new Blob([JSON.stringify(db,null,2)],{type:'application/json'});
  const a=document.createElement('a');
  a.href=URL.createObjectURL(b);
  a.download='timepanel-yedek-'+new Date().toISOString().slice(0,10)+'.json';
- a.click();
- setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+ a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);
 }
 
 function restore(e){
- const f=e.target.files[0];
- if(!f)return;
+ const f=e.target.files[0];if(!f)return;
  const r=new FileReader();
-
  r.onload=()=>{
   try{
    const x=JSON.parse(r.result);
    if(!x||typeof x!=='object'||!x.finance||
     !Array.isArray(x.vault)||!Array.isArray(x.records)||
     !Array.isArray(x.history))throw Error();
-
    const d=defaults();
    db={
-    ...d,...x,
-    finance:{...d.finance,...x.finance},
-    vault:x.vault,
-    records:x.records,
-    history:x.history,
+    ...d,...x,finance:{...d.finance,...x.finance},
+    vault:x.vault,records:x.records,history:x.history,
     extraHistory:Array.isArray(x.extraHistory)?x.extraHistory:[],
     rate:{...d.rate,...(x.rate||{})}
    };
-
-   save();
-   renderAll();
-   toast('Yedek geri yüklendi');
-  }catch(err){
-   toast('Yedek dosyası geçersiz');
-  }
+   save();renderAll();toast('Yedek geri yüklendi');
+  }catch(err){toast('Yedek dosyası geçersiz')}
  };
-
- r.readAsText(f);
- e.target.value='';
+ r.readAsText(f);e.target.value='';
 }
 
 function exportCSV(){
@@ -1442,22 +1137,19 @@ function exportCSV(){
   ...db.records.map(x=>[x.type,x.name,x.amount,x.currency,x.due]),
   ...db.extraHistory.map(x=>['Ekstra borç ödemesi',x.note||'Kasadan borca',x.amount,x.currency,new Date(x.date).toISOString()])
  ];
-
  const csv=rows.map(r=>r.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(';')).join('\n');
  const a=document.createElement('a');
  a.href=URL.createObjectURL(new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8'}));
- a.download='timepanel-kayitlar.csv';
- a.click();
+ a.download='timepanel-kayitlar.csv';a.click();
  setTimeout(()=>URL.revokeObjectURL(a.href),1000);
 }
 
 function resetApp(){
  if(!confirm('Tüm uygulama verileri silinsin mi?'))return;
- db=defaults();
- save();
- renderAll();
- toast('Uygulama sıfırlandı');
+ db=defaults();save();renderAll();toast('Uygulama sıfırlandı');
 }
+
+/* BAŞLATMA */
 
 function renderAll(){
  renderRate();
@@ -1472,8 +1164,7 @@ function renderAll(){
 function tick(){
  el('clock').textContent=new Date().toLocaleString('tr-TR');
  updateUI();
-
- if(tick.last===undefined||Date.now()-tick.last>1000){
+ if(tick.last===undefined||Date.now()-tick.last>10000){
   tick.last=Date.now();
   renderRecords();
  }
@@ -1483,15 +1174,16 @@ renderAll();
 connectRate();
 setInterval(tick,1000);
 
-window.addEventListener('resize',drawCharts);
+window.addEventListener('resize',()=>{
+ clearTimeout(window.resizeTimer);
+ window.resizeTimer=setTimeout(drawCharts,150);
+});
 window.addEventListener('online',connectRate);
-
 window.addEventListener('beforeunload',()=>{
  manualClose=true;
  clearTimeout(reconnectTimer);
  if(socket)socket.close();
 });
-
 </script>
 </body>
 </html>
