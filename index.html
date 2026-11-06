@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -5,20 +6,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#f5f5f5">
 <title>ENPARA TIMEPANEL PRO</title>
-
 <style>
-:root{
---bg:#f5f5f5;--white:#fff;--purple:#b04ba5;
---purple-light:#dfc1dc;--text:#707070;--muted:#999;
---line:#eee;--green:#54b98a;--red:#df7777;--blue:#27a8e8;
-}
+:root{--bg:#f5f5f5;--white:#fff;--purple:#b04ba5;--purple-light:#dfc1dc;--text:#707070;--muted:#999;--line:#eee;--green:#54b98a;--red:#df7777;--blue:#27a8e8}
 *{box-sizing:border-box}
-body{
-margin:0;padding:env(safe-area-inset-top) 0 calc(25px + env(safe-area-inset-bottom));
-background:var(--bg);color:var(--text);
-font-family:"Roboto Condensed","Arial Narrow",Arial,sans-serif;
-font-size:13px;-webkit-font-smoothing:antialiased;
-}
+body{margin:0;padding:env(safe-area-inset-top) 0 calc(25px + env(safe-area-inset-bottom));background:var(--bg);color:var(--text);font-family:"Roboto Condensed","Arial Narrow",Arial,sans-serif;font-size:13px;-webkit-font-smoothing:antialiased}
 button,input,select{font:inherit}
 .wrap{max-width:850px;margin:auto;padding:0 12px}
 .top{height:66px;display:flex;justify-content:space-between;align-items:center;padding:0 5px}
@@ -27,70 +18,38 @@ button,input,select{font:inherit}
 .clock{text-align:right;font-size:11px;color:#888;line-height:1.5}
 .colorline{height:5px;display:flex;margin-bottom:18px}
 .colorline span{flex:1}
-.colorline span:nth-child(1){background:#b04ba5}
-.colorline span:nth-child(2){background:#ff9b16}
-.colorline span:nth-child(3){background:#8bc934}
-.colorline span:nth-child(4){background:#21a8e5}
-.ticker{
-background:white;border-radius:9px;padding:12px 15px;margin-bottom:12px;
-display:flex;justify-content:space-between;align-items:center;
-}
+.colorline span:nth-child(1){background:#b04ba5}.colorline span:nth-child(2){background:#ff9b16}.colorline span:nth-child(3){background:#8bc934}.colorline span:nth-child(4){background:#21a8e5}
+.ticker{background:white;border-radius:9px;padding:12px 15px;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center}
 .ticker small{font-size:10px;color:#999}
 .ticker strong{display:block;font-size:18px;margin-top:3px;color:#666}
 .status{font-size:10px;padding:5px 8px;border-radius:15px;border:1px solid #ddd}
-.ok{color:#42a87d;border-color:#9bd9bd}
-.bad{color:#d47777;border-color:#e6b5b5}
+.ok{color:#42a87d;border-color:#9bd9bd}.bad{color:#d47777;border-color:#e6b5b5}
 .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:12px}
-.span12{grid-column:span 12}
-.span6{grid-column:span 6}
-.span4{grid-column:span 4}
+.span12{grid-column:span 12}.span6{grid-column:span 6}.span4{grid-column:span 4}
 .card{background:white;border-radius:10px;overflow:hidden;animation:cardIn .45s ease both}
 @keyframes cardIn{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
-.card-head{
-min-height:53px;display:flex;justify-content:space-between;align-items:center;
-padding:12px 15px;border-bottom:5px solid var(--bg)
-}
+.card-head{min-height:53px;display:flex;justify-content:space-between;align-items:center;padding:12px 15px;border-bottom:5px solid var(--bg)}
 .section{font-size:15px;font-weight:700;color:var(--purple);margin:0}
 .head-value{font-size:17px;font-weight:700;color:#707070;text-align:right}
 .card-body{padding:8px 15px 12px}
-.balance-row{
-min-height:43px;display:flex;align-items:center;
-justify-content:space-between;gap:10px;font-size:13px
-}
+.balance-row{min-height:43px;display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:13px}
 .balance-row strong{font-size:14px;font-weight:600;white-space:nowrap}
-.metrics{
-display:grid;grid-template-columns:repeat(3,1fr);gap:8px;
-padding:12px 15px 15px;border-top:5px solid var(--bg)
-}
-.metric{min-width:0;padding:5px 0}
-.metric label{display:block;font-size:10px;color:#999;margin-bottom:6px}
-.metric b{font-size:13px;font-weight:600;overflow-wrap:anywhere}
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:12px 15px 15px;border-top:5px solid var(--bg)}
+.metric{min-width:0;padding:5px 0}.metric label{display:block;font-size:10px;color:#999;margin-bottom:6px}.metric b{font-size:13px;font-weight:600;overflow-wrap:anywhere}
 .field{display:flex;flex-direction:column;gap:5px;flex:1;min-width:100px;margin-bottom:10px}
 .field label{font-size:11px;color:#888}
-.field input,.field select{
-width:100%;min-width:0;background:#fafafa;border:1px solid #e8e8e8;
-border-radius:6px;padding:10px;color:#555;outline:none;font-size:13px
-}
+.field input,.field select{width:100%;min-width:0;background:#fafafa;border:1px solid #e8e8e8;border-radius:6px;padding:10px;color:#555;outline:none;font-size:13px;min-height:39px}
 .field input:focus,.field select:focus{border-color:#c78ac0}
 .field small{font-size:10px;color:#aaa}
+input[type="datetime-local"]{width:100%;min-width:0;display:block;appearance:auto;-webkit-appearance:auto}
 .row{display:flex;gap:9px;flex-wrap:wrap}
-.btn{
-border:1px solid #e6d3e4;background:white;color:var(--purple);
-border-radius:6px;padding:9px 12px;font-size:11px;font-weight:600;cursor:pointer;
-transition:all .2s ease
-}
+.btn{border:1px solid #e6d3e4;background:white;color:var(--purple);border-radius:6px;padding:9px 12px;font-size:11px;font-weight:600;cursor:pointer;transition:all .2s ease}
 .btn:active{opacity:.65;transform:scale(.97)}
 .primary{background:var(--purple);color:white;border-color:var(--purple)}
-.good{color:#419c75;border-color:#b6dfcc}
-.danger{color:#c66e6e;border-color:#e7c3c3}
-.ghost{background:#f8f8f8}
+.good{color:#419c75;border-color:#b6dfcc}.danger{color:#c66e6e;border-color:#e7c3c3}.ghost{background:#f8f8f8}
 .notice{font-size:10px;line-height:1.5;color:#999;margin-top:10px}
 .list{display:flex;flex-direction:column}
-.item{
-display:flex;justify-content:space-between;align-items:center;gap:10px;
-padding:12px 0;border-bottom:1px solid #f0f0f0;
-animation:itemIn .3s ease
-}
+.item{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid #f0f0f0;animation:itemIn .3s ease}
 @keyframes itemIn{from{opacity:0;transform:translateX(-5px)}to{opacity:1;transform:translateX(0)}}
 .item:last-child{border-bottom:0}
 .name{font-size:13px;color:#666;font-weight:500;overflow-wrap:anywhere}
@@ -99,47 +58,28 @@ animation:itemIn .3s ease
 .actions{display:flex;justify-content:flex-end;gap:4px;flex-wrap:wrap;margin-top:6px}
 .mini{padding:5px 7px;font-size:10px}
 .tabs{display:flex;gap:5px;overflow-x:auto;padding:10px 0}
-.tab{
-border:1px solid #e9e1e8;background:white;color:#888;border-radius:20px;
-padding:6px 11px;white-space:nowrap;font-size:10px
-}
+.tab{border:1px solid #e9e1e8;background:white;color:#888;border-radius:20px;padding:6px 11px;white-space:nowrap;font-size:10px}
 .tab.active{background:#b04ba5;color:white;border-color:#b04ba5}
 .empty{text-align:center;padding:20px 8px;color:#aaa;font-size:11px}
 .divider{height:1px;background:#eee;margin:12px 0}
 .chart{width:100%;height:165px;display:block}
 .hidden{display:none!important}
 .foot{text-align:center;color:#aaa;font-size:10px;padding:18px 0}
-.toast{
-position:fixed;z-index:999;bottom:25px;left:50%;transform:translateX(-50%);
-background:#555;color:white;padding:12px 17px;border-radius:8px;
-font-size:12px;max-width:90%;text-align:center;
-box-shadow:0 5px 20px rgba(0,0,0,.15);
-animation:toastIn .25s ease
-}
+.toast{position:fixed;z-index:999;bottom:25px;left:50%;transform:translateX(-50%);background:#555;color:white;padding:12px 17px;border-radius:8px;font-size:12px;max-width:90%;text-align:center;box-shadow:0 5px 20px rgba(0,0,0,.15);animation:toastIn .25s ease}
 @keyframes toastIn{from{opacity:0;transform:translate(-50%,10px)}to{opacity:1;transform:translate(-50%,0)}}
 .progress-wrap{padding:15px 15px 12px}
 .progress-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:9px}
-.progress-top span{font-size:11px;color:#999}
-.progress-top strong{font-size:13px;color:var(--purple)}
+.progress-top span{font-size:11px;color:#999}.progress-top strong{font-size:13px;color:var(--purple)}
 .progress{height:9px;background:#f0edf0;border-radius:20px;overflow:hidden}
-.progress-fill{
-height:100%;width:0;
-background:linear-gradient(90deg,#b04ba5,#df9ad4);
-border-radius:20px;transition:width .5s ease;position:relative
-}
-.progress-fill:after{
-content:"";position:absolute;inset:0;
-background:linear-gradient(90deg,transparent,rgba(255,255,255,.45),transparent);
-animation:shine 2.5s infinite
-}
+.progress-fill{height:100%;width:0;background:linear-gradient(90deg,#b04ba5,#df9ad4);border-radius:20px;transition:width .5s ease;position:relative}
+.progress-fill:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.45),transparent);animation:shine 2.5s infinite}
 @keyframes shine{from{transform:translateX(-100%)}to{transform:translateX(100%)}}
 .progress-label{display:flex;justify-content:space-between;margin-top:7px;font-size:10px;color:#aaa}
 .donut-area{display:flex;align-items:center;justify-content:center;gap:20px;padding:12px 5px;flex-wrap:wrap}
 .donut{width:130px;height:130px;position:relative;flex-shrink:0}
 .donut svg{width:100%;height:100%;transform:rotate(-90deg)}
 .donut-center{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column}
-.donut-center strong{font-size:17px;color:#666}
-.donut-center small{font-size:9px;color:#aaa}
+.donut-center strong{font-size:17px;color:#666}.donut-center small{font-size:9px;color:#aaa}
 .legend{display:flex;flex-direction:column;gap:12px}
 .legend-item{display:flex;align-items:center;gap:7px;font-size:11px;color:#888}
 .dot{width:8px;height:8px;border-radius:50%}
@@ -152,46 +92,25 @@ animation:shine 2.5s infinite
 .chart-legend{display:flex;justify-content:center;gap:16px;padding:5px 0 10px;font-size:10px;color:#999}
 .chart-legend span{display:flex;align-items:center;gap:5px}
 .chart-legend i{width:7px;height:7px;border-radius:50%;display:inline-block}
-@media(max-width:650px){
-.span6,.span4{grid-column:span 12}
-.metrics{grid-template-columns:repeat(3,1fr)}
-.wrap{padding:0 12px}
-}
-@media(prefers-reduced-motion:reduce){
-*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}
-}
+@media(max-width:650px){.span6,.span4{grid-column:span 12}.metrics{grid-template-columns:repeat(3,1fr)}.wrap{padding:0 12px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 </style>
 </head>
-
 <body>
 <div class="wrap">
-
 <header class="top">
  <div class="brand">Enpara <small>TIMEPANEL PRO</small></div>
- <div class="clock">
-  <div id="clock">--</div>
-  <div>Finansal kontrol paneli</div>
- </div>
+ <div class="clock"><div id="clock">--</div><div>Finansal kontrol paneli</div></div>
 </header>
-
 <div class="colorline"><span></span><span></span><span></span><span></span></div>
-
 <section class="ticker">
- <div>
-  <small>BINANCE TR · USDT / TRY CANLI KUR</small>
-  <strong id="rate">Kur bekleniyor...</strong>
-  <small id="rateMeta">Bağlantı kuruluyor</small>
- </div>
+ <div><small>BINANCE TR · USDT / TRY CANLI KUR</small><strong id="rate">Kur bekleniyor...</strong><small id="rateMeta">Bağlantı kuruluyor</small></div>
  <span class="status" id="wsStatus">BAĞLANIYOR</span>
 </section>
-
 <div class="grid">
 
 <section class="card span12">
- <div class="card-head">
-  <h3 class="section">Birikmiş para</h3>
-  <span class="head-value" id="available">₺0,00</span>
- </div>
+ <div class="card-head"><h3 class="section">Birikmiş para</h3><span class="head-value" id="available">₺0,00</span></div>
  <div class="card-body">
   <div class="balance-row"><span>Bugüne kadar biriken</span><strong id="reduced">₺0,00</strong></div>
   <div class="balance-row"><span>Kasaya aktarılan</span><strong id="transferredDisplay">₺0,00</strong></div>
@@ -201,10 +120,7 @@ animation:shine 2.5s infinite
 </section>
 
 <section class="card span12">
- <div class="card-head">
-  <h3 class="section">Kalan borç</h3>
-  <span class="head-value" id="debtMain">₺0,00</span>
- </div>
+ <div class="card-head"><h3 class="section">Kalan borç</h3><span class="head-value" id="debtMain">₺0,00</span></div>
  <div class="progress-wrap">
   <div class="progress-top"><span>Borç ödeme ilerlemesi</span><strong id="progressPercent">%0</strong></div>
   <div class="progress"><div class="progress-fill" id="debtProgress"></div></div>
@@ -212,7 +128,7 @@ animation:shine 2.5s infinite
  </div>
  <div class="card-body">
   <div class="balance-row"><span>USD karşılığı</span><strong id="debtUsd">-</strong></div>
-  <div class="balance-row"><span>Hedef tarihi</span><strong id="targetDate">-</strong></div>
+  <div class="balance-row"><span>Hedef tarihi ve saati</span><strong id="targetDate">-</strong></div>
   <div class="balance-row"><span>Aylık borç ödemesi</span><strong id="monthlyDisplay">₺0,00</strong></div>
   <div class="balance-row"><span>Ekstra ödemeler</span><strong id="extraPaidDisplay">₺0,00</strong></div>
  </div>
@@ -224,48 +140,24 @@ animation:shine 2.5s infinite
 </section>
 
 <section class="card span12">
- <div class="card-head">
-  <h3 class="section">Borç ödeme analizi</h3>
-  <span class="head-value" id="paidPercent">%0</span>
- </div>
+ <div class="card-head"><h3 class="section">Borç ödeme analizi</h3><span class="head-value" id="paidPercent">%0</span></div>
  <div class="donut-area">
-  <div class="donut">
-   <svg viewBox="0 0 120 120">
-    <circle cx="60" cy="60" r="48" fill="none" stroke="#f0edf0" stroke-width="12"/>
-    <circle id="donutPaid" cx="60" cy="60" r="48" fill="none" stroke="#b04ba5" stroke-width="12" stroke-linecap="round" stroke-dasharray="0 302"/>
-   </svg>
-   <div class="donut-center"><strong id="donutPercent">%0</strong><small>TAMAMLANDI</small></div>
-  </div>
+  <div class="donut"><svg viewBox="0 0 120 120">
+   <circle cx="60" cy="60" r="48" fill="none" stroke="#f0edf0" stroke-width="12"/>
+   <circle id="donutPaid" cx="60" cy="60" r="48" fill="none" stroke="#b04ba5" stroke-width="12" stroke-linecap="round" stroke-dasharray="0 302"/>
+  </svg><div class="donut-center"><strong id="donutPercent">%0</strong><small>TAMAMLANDI</small></div></div>
   <div class="legend">
    <div class="legend-item"><span class="dot" style="background:#b04ba5"></span><span>Azalan: <b id="legendPaid">₺0</b></span></div>
    <div class="legend-item"><span class="dot" style="background:#eee"></span><span>Kalan: <b id="legendDebt">₺0</b></span></div>
   </div>
  </div>
  <div class="speed-box">
-  <div class="speed-item highlight">
-   <small>Saniyelik borç azalma hızı</small>
-   <strong id="secondSpeed">₺0,000000 / sn</strong>
-  </div>
-  <div class="speed-item">
-   <small>Dakikalık azalma</small>
-   <strong id="minuteSpeed">₺0</strong>
-  </div>
-  <div class="speed-item">
-   <small>Saatlik azalma</small>
-   <strong id="hourlySpeed">₺0</strong>
-  </div>
-  <div class="speed-item">
-   <small>Günlük azalma</small>
-   <strong id="dailySpeed">₺0</strong>
-  </div>
-  <div class="speed-item">
-   <small>Tahmini bitiş</small>
-   <strong id="estimatedEnd">-</strong>
-  </div>
-  <div class="speed-item">
-   <small>Hedefe kalan süre</small>
-   <strong id="remainingTime">-</strong>
-  </div>
+  <div class="speed-item highlight"><small>Saniyelik borç azalma hızı</small><strong id="secondSpeed">₺0,00000000 / sn</strong></div>
+  <div class="speed-item"><small>Dakikalık azalma</small><strong id="minuteSpeed">₺0</strong></div>
+  <div class="speed-item"><small>Saatlik azalma</small><strong id="hourlySpeed">₺0</strong></div>
+  <div class="speed-item"><small>Günlük azalma</small><strong id="dailySpeed">₺0</strong></div>
+  <div class="speed-item"><small>Tahmini bitiş</small><strong id="estimatedEnd">-</strong></div>
+  <div class="speed-item"><small>Hedefe kalan süre</small><strong id="remainingTime">-</strong></div>
  </div>
 </section>
 
@@ -286,11 +178,15 @@ animation:shine 2.5s infinite
   <div class="field"><label>Para birimi</label><select id="fCurrency"><option value="TRY">TRY · Türk lirası</option><option value="USD">USD · Dolar</option><option value="EUR">EUR · Euro</option></select></div>
   <div class="field"><label>Aylık gelir</label><input id="fIncome" type="number" min="0" step="0.01"><small id="incomeUsd"></small></div>
   <div class="field"><label>Aylık borca ayrılan</label><input id="fMonthly" type="number" min="0" step="0.01"><small id="monthlyUsd"></small></div>
-  <div class="field"><label>Borç bitiş hedefi</label><input id="fTarget" type="date"></div> <input type="datetime-local" id="tarih" step="60">
-  <div class="field"><label>Hesaplama yöntemi</label><select id="fMode"><option value="target">Hedef tarihe göre</option><option value="monthly">Aylık birikime göre</option></select></div>
+  <div class="field">
+   <label>Borç bitiş hedefi (tarih ve saat)</label>
+   <input id="fTarget" type="datetime-local" step="60">
+   <small>Gün, ay, yıl, saat ve dakika seç. Sayaç tam bu anda sıfırlanır.</small>
+  </div>
+  <div class="field"><label>Hesaplama yöntemi</label><select id="fMode"><option value="target">Hedef tarih ve saate göre</option><option value="monthly">Aylık birikime göre</option></select></div>
   <button class="btn primary" onclick="saveFinance()">Ayarları kaydet</button>
   <button class="btn ghost" onclick="resetAccrual()">Sayacı sıfırla</button>
-  <p class="notice">Başlangıç borcu sabit kalır. Sayaç sıfırlandığında bu tutar yeniden esas alınır ve hedef tarihine kalan süreye göre saniyelik hız hesaplanır.</p>
+  <p class="notice">Başlangıç borcu sabit kalır. Sayaç sıfırlandığında başlangıç borcu yeniden esas alınır. Saniyelik hız, seçilen hedef saatine göre hesaplanır.</p>
  </div>
 </section>
 
@@ -311,7 +207,7 @@ animation:shine 2.5s infinite
  <div class="card-body">
   <div class="field"><label>Kayıt adı</label><input id="rName" placeholder="Örn. Kasko"></div>
   <div class="field"><label>Tutar</label><input id="rAmount" type="number" min="0" step="0.01"></div>
-  <div class="field"><label>Vade tarihi</label><input id="rDue" type="date"></div>
+  <div class="field"><label>Vade tarihi ve saati</label><input id="rDue" type="datetime-local" step="60"></div>
   <div class="field"><label>Tür</label><select id="rType"><option value="payment">Ödeme</option><option value="reminder">Hatırlatma</option></select></div>
   <div class="field"><label>Tekrar</label><select id="rRepeat"><option value="none">Tek seferlik</option><option value="monthly">Her ay</option><option value="yearly">Her yıl</option></select></div>
   <div class="field"><label>Not</label><input id="rNote" placeholder="İsteğe bağlı"></div>
@@ -362,10 +258,9 @@ animation:shine 2.5s infinite
    <button class="btn ghost" onclick="exportCSV()">CSV indir</button>
    <button class="btn danger" onclick="resetApp()">Uygulamayı sıfırla</button>
   </div>
-  <p class="notice">Veriler bu cihazın tarayıcısında saklanır. Safari verileri silinirse yedek olmadan kaybolabilir. Düzenli JSON yedeği alın.</p>
+  <p class="notice">Veriler bu cihazın tarayıcısında saklanır. Safari verileri silinirse yedek olmadan kaybolabilir.</p>
  </div>
 </section>
-
 </div>
 <div class="foot">ENPARA · Kişisel finans takip paneli</div>
 </div>
@@ -378,17 +273,12 @@ const KEY='enpara_timepanel_v5';
 const LAST_KEY='enpara_last_seen_v5';
 
 const defaults=()=>({
- finance:{
-  initial:0,remaining:0,currency:'TRY',income:0,monthly:0,
-  target:'',mode:'target',startedAt:Date.now(),lastAccrual:Date.now(),
-  transferred:0,extraPaid:0
- },
+ finance:{initial:0,remaining:0,currency:'TRY',income:0,monthly:0,target:'',mode:'target',startedAt:Date.now(),lastAccrual:Date.now(),transferred:0,extraPaid:0},
  vault:[],records:[],history:[],extraHistory:[],
  rate:{usdttry:0,eurtry:0,updated:0}
 });
 
-let db=load();
-let socket=null,reconnectTimer=null,manualClose=false;
+let db=load(),socket=null,reconnectTimer=null,manualClose=false;
 let filter='all',lastChartAt=0,toastTimer=null;
 
 function load(){
@@ -396,7 +286,7 @@ function load(){
   const x=JSON.parse(localStorage.getItem(KEY));
   if(!x||typeof x!=='object')return defaults();
   const d=defaults();
-  return {
+  const result={
    ...d,...x,
    finance:{...d.finance,...(x.finance||{})},
    vault:Array.isArray(x.vault)?x.vault:[],
@@ -405,6 +295,11 @@ function load(){
    extraHistory:Array.isArray(x.extraHistory)?x.extraHistory:[],
    rate:{...d.rate,...(x.rate||{})}
   };
+  // Eski yedeklerdeki YYYY-AA-GG hedeflerini uyumlu hale getir.
+  if(/^\d{4}-\d{2}-\d{2}$/.test(result.finance.target||'')){
+   result.finance.target+='T23:59';
+  }
+  return result;
  }catch(e){return defaults()}
 }
 
@@ -418,19 +313,10 @@ function n(v){const x=Number(v);return Number.isFinite(x)?x:0}
 function uid(){return Date.now().toString(36)+Math.random().toString(36).slice(2,8)}
 
 function money(v,c='TRY',digits=2){
- try{
-  return new Intl.NumberFormat('tr-TR',{
-   style:'currency',currency:c,
-   minimumFractionDigits:digits,maximumFractionDigits:digits
-  }).format(n(v));
- }catch(e){return num(v,digits)+' '+c}
+ try{return new Intl.NumberFormat('tr-TR',{style:'currency',currency:c,minimumFractionDigits:digits,maximumFractionDigits:digits}).format(n(v))}
+ catch(e){return num(v,digits)+' '+c}
 }
-
-function num(v,d=2){
- return new Intl.NumberFormat('tr-TR',{
-  minimumFractionDigits:0,maximumFractionDigits:d
- }).format(n(v));
-}
+function num(v,d=2){return new Intl.NumberFormat('tr-TR',{minimumFractionDigits:0,maximumFractionDigits:d}).format(n(v))}
 
 function tryValue(v,c){
  if(c==='TRY')return n(v);
@@ -438,41 +324,52 @@ function tryValue(v,c){
  if(c==='EUR')return n(v)*(db.rate.eurtry||0);
  return 0;
 }
-
 function fromTRY(v,c){
  if(c==='TRY')return v;
  const r=c==='USD'?db.rate.usdttry:db.rate.eurtry;
  return r>0?v/r:0;
 }
-
 function usdValue(v,c){
  const r=db.rate.usdttry||0;
  return r>0?tryValue(v,c)/r:null;
 }
-
 function usdText(v,c){
  const x=usdValue(v,c);
  return x===null?'USD kuru bekleniyor':'≈ '+money(x,'USD');
 }
-
 function toast(message){
- const e=el('toast');
- e.textContent=message;
- e.classList.remove('hidden');
- clearTimeout(toastTimer);
- toastTimer=setTimeout(()=>e.classList.add('hidden'),4200);
+ const e=el('toast');e.textContent=message;e.classList.remove('hidden');
+ clearTimeout(toastTimer);toastTimer=setTimeout(()=>e.classList.add('hidden'),4200);
 }
 
-/* BORÇ HESAPLAMA
-   remaining: son sabitlenmiş borç bakiyesi
-   lastAccrual: bu bakiyenin hesaplamaya başladığı zaman
-   Böylece uygulama kapalıyken geçen süre de hesaba katılır.
-*/
+/* TARİH VE SAAT */
 
 function targetTime(){
- return db.finance.target?
-  new Date(db.finance.target+'T23:59:59').getTime():0;
+ const value=db.finance.target;
+ if(!value)return 0;
+ // Eski tarih formatı ile gelen verileri de destekle.
+ if(/^\d{4}-\d{2}-\d{2}$/.test(value)){
+  return new Date(value+'T23:59:59').getTime();
+ }
+ const t=new Date(value).getTime();
+ return Number.isFinite(t)?t:0;
 }
+
+function formatDateTime(value){
+ if(!value)return '-';
+ let d=new Date(value);
+ if(!Number.isFinite(d.getTime())&&/^\d{4}-\d{2}-\d{2}$/.test(value))d=new Date(value+'T23:59:59');
+ if(!Number.isFinite(d.getTime()))return '-';
+ return d.toLocaleString('tr-TR',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'});
+}
+
+function toLocalInput(date){
+ const d=new Date(date);
+ const pad=x=>String(x).padStart(2,'0');
+ return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate())+'T'+pad(d.getHours())+':'+pad(d.getMinutes());
+}
+
+/* BORÇ HESAPLAMA */
 
 function ratePerMs(){
  const f=db.finance;
@@ -482,8 +379,8 @@ function ratePerMs(){
  if(f.mode==='target'&&f.target){
   const duration=targetTime()-n(f.lastAccrual);
   if(duration>0)return base/duration;
+  return 0;
  }
-
  return n(f.monthly)/(30.4375*86400000);
 }
 
@@ -493,65 +390,40 @@ function accruedAt(timestamp){
  const elapsed=Math.max(0,timestamp-n(f.lastAccrual));
  return Math.min(n(f.remaining),elapsed*ratePerMs());
 }
-
-function accrued(){
- return accruedAt(Date.now());
-}
-
-function remaining(){
- return Math.max(0,n(db.finance.remaining)-accrued());
-}
-
-function reduced(){
- return Math.max(0,n(db.finance.initial)-remaining());
-}
-
-function availableAccrual(){
- return Math.max(0,accrued()-n(db.finance.transferred));
-}
-
-function secondRate(){
- return ratePerMs()*1000;
-}
-
-function dailyRate(){
- return secondRate()*86400;
-}
+function accrued(){return accruedAt(Date.now())}
+function remaining(){return Math.max(0,n(db.finance.remaining)-accrued())}
+function reduced(){return Math.max(0,n(db.finance.initial)-remaining())}
+function availableAccrual(){return Math.max(0,accrued()-n(db.finance.transferred))}
+function secondRate(){return ratePerMs()*1000}
+function dailyRate(){return secondRate()*86400}
 
 function estimatedFinish(){
  const r=remaining(),speed=secondRate();
  if(r<=0)return 'Tamamlandı';
  if(speed<=0)return '-';
- return new Date(Date.now()+r/speed*1000).toLocaleDateString('tr-TR');
+ return formatDateTime(Date.now()+r/speed*1000);
 }
-
 function daysLeft(){
  const t=targetTime();
  return t?Math.max(0,Math.ceil((t-Date.now())/86400000)):0;
 }
-
 function remainingTimeText(){
  const ms=targetTime()-Date.now();
  if(!db.finance.target)return '-';
- if(ms<=0)return 'Hedef tarihi geçti';
+ if(ms<=0)return 'Hedef zamanı geçti';
  const total=Math.floor(ms/1000);
  const days=Math.floor(total/86400);
  const hours=Math.floor(total%86400/3600);
  const minutes=Math.floor(total%3600/60);
- return days+' gün '+hours+' saat '+minutes+' dk';
+ const seconds=total%60;
+ return days+' gün '+hours+' saat '+minutes+' dk '+seconds+' sn';
 }
 
-/* EKRAN GÜNCELLEME */
+/* EKRAN */
 
 function updateUI(){
- const f=db.finance;
- const r=remaining();
- const d=reduced();
- const a=availableAccrual();
- const c=f.currency;
- const sec=secondRate();
- const percent=f.initial>0?
-  Math.min(100,Math.max(0,d/f.initial*100)):0;
+ const f=db.finance,r=remaining(),d=reduced(),a=availableAccrual(),c=f.currency,sec=secondRate();
+ const percent=f.initial>0?Math.min(100,Math.max(0,d/f.initial*100)):0;
 
  el('debtMain').textContent=money(r,c);
  el('debtUsd').textContent=usdText(r,c);
@@ -561,17 +433,14 @@ function updateUI(){
  el('initialDisplay').textContent=money(f.initial,c);
  el('monthlyDisplay').textContent=money(f.monthly,c);
  el('extraPaidDisplay').textContent=money(f.extraPaid,c);
-
  el('reducedUsd').textContent=usdText(d,c);
  el('remainingUsd').textContent=usdText(r,c);
  el('incomeUsd').textContent=usdText(f.income,c);
  el('monthlyUsd').textContent=usdText(f.monthly,c);
 
  el('remainingDays').textContent=f.target?daysLeft()+' gün':'-';
- el('targetDate').textContent=f.target?
-  new Date(f.target+'T00:00:00').toLocaleDateString('tr-TR'):'-';
-
- el('debtStatus').textContent=r<=0?'Tamamlandı':'Aktif';
+ el('targetDate').textContent=formatDateTime(f.target);
+ el('debtStatus').textContent=r<=0?'Tamamlandı':(targetTime()&&Date.now()>targetTime()?'Hedef geçti':'Aktif');
 
  el('progressPercent').textContent='%'+num(percent);
  el('paidPercent').textContent='%'+num(percent);
@@ -579,15 +448,11 @@ function updateUI(){
  el('debtProgress').style.width=percent+'%';
 
  const circumference=2*Math.PI*48;
- el('donutPaid').setAttribute(
-  'stroke-dasharray',
-  (circumference*percent/100)+' '+circumference
- );
+ el('donutPaid').setAttribute('stroke-dasharray',(circumference*percent/100)+' '+circumference);
 
  el('legendPaid').textContent=money(d,c);
  el('legendDebt').textContent=money(r,c);
 
- // Saniyelik hız yüksek hassasiyetle gösterilir.
  el('secondSpeed').textContent=money(sec,c,8)+' / sn';
  el('minuteSpeed').textContent=money(sec*60,c,4);
  el('hourlySpeed').textContent=money(sec*3600,c,4);
@@ -602,943 +467,423 @@ function updateUI(){
 }
 
 function balance(c){
- return db.vault.filter(v=>v.currency===c).reduce(
-  (s,v)=>s+(v.type==='out'?-n(v.amount):n(v.amount)),0
- );
+ return db.vault.filter(v=>v.currency===c).reduce((s,v)=>s+(v.type==='out'?-n(v.amount):n(v.amount)),0);
 }
-
 function vaultTotalTRY(){
  return ['TRY','USD','EUR'].reduce((s,c)=>s+tryValue(balance(c),c),0);
 }
 
-/* CANLI DÖVİZ KURU */
+/* CANLI KUR */
 
 function renderRate(){
  const r=db.rate.usdttry;
  el('rate').textContent=r>0?'₺'+num(r,4):'Kur verisi yok';
- el('rateMeta').textContent=r>0?
-  '1 USDT ≈ '+num(r,4)+' TL · '+new Date(db.rate.updated).toLocaleTimeString('tr-TR'):
-  'Binance TR akışından fiyat bekleniyor';
- if(r>0&&Date.now()-db.rate.updated>300000){
-  el('rateMeta').textContent+=' · SON FİYAT ESKİ';
- }
+ el('rateMeta').textContent=r>0?'1 USDT ≈ '+num(r,4)+' TL · '+new Date(db.rate.updated).toLocaleTimeString('tr-TR'):'Binance TR akışından fiyat bekleniyor';
+ if(r>0&&Date.now()-db.rate.updated>300000)el('rateMeta').textContent+=' · SON FİYAT ESKİ';
 }
-
 function setStatus(s,k=''){
- el('wsStatus').textContent=s;
- el('wsStatus').className='status '+k;
+ el('wsStatus').textContent=s;el('wsStatus').className='status '+k;
 }
-
 function setRate(price,symbol){
  if(!Number.isFinite(price)||price<=0)return;
  if(symbol==='USDTTRY')db.rate.usdttry=price;
  if(symbol==='EURTRY')db.rate.eurtry=price;
- db.rate.updated=Date.now();
- save();
- renderRate();
- updateUI();
- renderVault();
+ db.rate.updated=Date.now();save();renderRate();updateUI();renderVault();
 }
-
 function connectRate(){
- manualClose=false;
- clearTimeout(reconnectTimer);
-
- if(socket){
-  socket.onclose=null;
-  try{socket.close()}catch(e){}
- }
-
+ manualClose=false;clearTimeout(reconnectTimer);
+ if(socket){socket.onclose=null;try{socket.close()}catch(e){}}
  setStatus('BAĞLANIYOR');
-
  try{
-  socket=new WebSocket(
-   'wss://stream-cloud.binance.tr/stream?streams=usdttry@trade/eurtry@trade'
-  );
-
+  socket=new WebSocket('wss://stream-cloud.binance.tr/stream?streams=usdttry@trade/eurtry@trade');
   socket.onopen=()=>setStatus('BAĞLI','ok');
-
   socket.onmessage=e=>{
    try{
-    const m=JSON.parse(e.data);
-    const d=m.data||m;
+    const m=JSON.parse(e.data),d=m.data||m;
     if(d.e==='trade'){
      if(d.s==='USDTTRY')setRate(Number(d.p),'USDTTRY');
      if(d.s==='EURTRY')setRate(Number(d.p),'EURTRY');
     }
    }catch(err){}
   };
-
   socket.onerror=()=>setStatus('AKIŞ HATASI','bad');
-
   socket.onclose=()=>{
-   if(!manualClose){
-    setStatus('YENİDEN BAĞLANIYOR','bad');
-    reconnectTimer=setTimeout(connectRate,5000);
-   }
+   if(!manualClose){setStatus('YENİDEN BAĞLANIYOR','bad');reconnectTimer=setTimeout(connectRate,5000)}
   };
- }catch(e){
-  setStatus('BAĞLANAMADI','bad');
-  reconnectTimer=setTimeout(connectRate,10000);
- }
+ }catch(e){setStatus('BAĞLANAMADI','bad');reconnectTimer=setTimeout(connectRate,10000)}
 }
 
-/* FİNANS AYARLARI */
+/* FİNANS */
 
 function saveFinance(){
  const f=db.finance;
  const v=Math.max(0,n(el('fDebt').value));
-
- if(v<=0){
-  toast('Başlangıç borcunu gir');
-  return;
+ const target=el('fTarget').value;
+ if(v<=0){toast('Başlangıç borcunu gir');return}
+ if(!target){toast('Borç bitiş tarihini ve saatini seç');return}
+ const targetMs=new Date(target).getTime();
+ if(!Number.isFinite(targetMs)){toast('Tarih ve saat geçersiz');return}
+ if(el('fMode').value==='target'&&targetMs<=Date.now()){
+  toast('Hedef zamanı gelecekte olmalı');return;
  }
 
+ // Yeni ayarlar kaydedilirken borç sayacı yeniden başlatılır.
  f.initial=v;
  f.remaining=v;
  f.currency=el('fCurrency').value;
  f.income=Math.max(0,n(el('fIncome').value));
  f.monthly=Math.max(0,n(el('fMonthly').value));
- f.target=el('fTarget').value;
+ f.target=target;
  f.mode=el('fMode').value;
  f.startedAt=Date.now();
  f.lastAccrual=Date.now();
  f.transferred=0;
  f.extraPaid=0;
-
- save();
- renderAll();
- toast('Finans ayarları kaydedildi');
+ save();renderAll();
+ toast('Finans ayarları kaydedildi. Saat bazlı sayaç başlatıldı.');
 }
-
-// Bu alan daima başlangıç borcunu gösterir.
-// Canlı azalan borç bu inputa yazılmaz.
 function fillFinance(){
  const f=db.finance;
  el('fDebt').value=n(f.initial).toFixed(2);
  el('fCurrency').value=f.currency;
  el('fIncome').value=f.income;
  el('fMonthly').value=f.monthly;
- el('fTarget').value=f.target;
+ el('fTarget').value=f.target||'';
  el('fMode').value=f.mode;
 }
-
-// Sayaç sıfırlama: kalan tutar değil, kayıtlı başlangıç borcu esas alınır.
 function resetAccrual(){
  const f=db.finance;
+ if(f.mode==='target'&&f.target&&targetTime()<=Date.now()){
+  toast('Yeni bir gelecek hedef tarihi ve saati seçmelisin');return;
+ }
  f.remaining=Math.max(0,n(f.initial));
  f.startedAt=Date.now();
  f.lastAccrual=Date.now();
  f.transferred=0;
  f.extraPaid=0;
-
- save();
- renderAll();
+ save();renderAll();
  toast('Sayaç sıfırlandı. Başlangıç borcuna göre yeni hız hesaplandı.');
 }
 
-/* KASAYA AKTARIM */
+/* KASA AKTARIMI */
 
 function transferToVault(){
  const f=db.finance;
  const amount=Math.floor(availableAccrual()*100)/100;
-
- if(amount<=0){
-  toast('Aktarılacak birikim yok');
-  return;
- }
-
- db.vault.unshift({
-  id:uid(),
-  type:'in',
-  amount,
-  currency:f.currency,
-  note:'Borç birikiminden kasaya aktarıldı',
-  date:Date.now(),
-  source:'accrual'
- });
-
+ if(amount<=0){toast('Aktarılacak birikim yok');return}
+ db.vault.unshift({id:uid(),type:'in',amount,currency:f.currency,note:'Borç birikiminden kasaya aktarıldı',date:Date.now(),source:'accrual'});
  f.transferred+=amount;
- save();
- renderAll();
- toast(money(amount,f.currency)+' kasaya aktarıldı');
+ save();renderAll();toast(money(amount,f.currency)+' kasaya aktarıldı');
 }
 
-/* KASA HAREKETLERİ */
-
 function addVault(){
- const amount=n(el('vAmount').value);
- const currency=el('vCurrency').value;
- const type=el('vType').value;
-
- if(amount<=0){
-  toast('Geçerli tutar gir');
-  return;
- }
-
- if(type==='out'&&balance(currency)<amount){
-  toast('Yeterli kasa bakiyesi yok');
-  return;
- }
-
- db.vault.unshift({
-  id:uid(),type,amount,currency,
-  note:el('vNote').value.trim(),
-  date:Date.now(),source:'manual'
- });
-
- el('vAmount').value='';
- el('vNote').value='';
-
- save();
- renderAll();
- toast('Kasa hareketi eklendi');
+ const amount=n(el('vAmount').value),currency=el('vCurrency').value,type=el('vType').value;
+ if(amount<=0){toast('Geçerli tutar gir');return}
+ if(type==='out'&&balance(currency)<amount){toast('Yeterli kasa bakiyesi yok');return}
+ db.vault.unshift({id:uid(),type,amount,currency,note:el('vNote').value.trim(),date:Date.now(),source:'manual'});
+ el('vAmount').value='';el('vNote').value='';
+ save();renderAll();toast('Kasa hareketi eklendi');
 }
 
 function deleteVault(i){
- const v=db.vault[i];
- if(!v)return;
-
- if(v.source==='debtPayment'){
-  toast('Borç ödeme kayıtları doğrudan silinemez');
-  return;
- }
-
+ const v=db.vault[i];if(!v)return;
+ if(v.source==='debtPayment'){toast('Borç ödeme kayıtları doğrudan silinemez');return}
  if(v.source==='accrual'){
-  const f=db.finance;
-  const amount=n(v.amount);
-
-  if(!confirm(
-   money(amount,v.currency)+' tutarındaki aktarım geri alınsın mı?\n\n'+
-   'Tutar kasadan çıkarılacak ve borca geri eklenecek.'
-  ))return;
-
-  // Önce şu anki borç sabitlenir.
+  const f=db.finance,amount=n(v.amount);
+  if(!confirm(money(amount,v.currency)+' tutarındaki aktarım geri alınsın mı?\nTutar kasadan çıkarılacak ve borca geri eklenecek.'))return;
   const current=remaining();
-
   let converted=amount;
-  if(v.currency!==f.currency){
-   converted=fromTRY(tryValue(amount,v.currency),f.currency);
-  }
-
-  if(converted<=0){
-   toast('Kur dönüşümü yapılamadı');
-   return;
-  }
-
-  // Borç yeniden sabitlenir ve kalan hedef süresine göre hız hesaplanır.
+  if(v.currency!==f.currency)converted=fromTRY(tryValue(amount,v.currency),f.currency);
+  if(converted<=0){toast('Kur dönüşümü yapılamadı');return}
   f.remaining=current+converted;
   f.lastAccrual=Date.now();
   f.transferred=Math.max(0,n(f.transferred)-amount);
-
-  db.history.unshift({
-   id:uid(),
-   name:'Kasaya aktarım geri alındı',
-   amount,
-   currency:v.currency,
-   paidAt:Date.now(),
-   type:'transferUndo'
-  });
-
+  db.history.unshift({id:uid(),name:'Kasaya aktarım geri alındı',amount,currency:v.currency,paidAt:Date.now(),type:'transferUndo'});
   db.vault.splice(i,1);
-  save();
-  renderAll();
-  toast('Aktarım geri alındı. Borç ve saniyelik hız güncellendi.');
-  return;
+  save();renderAll();toast('Aktarım geri alındı. Borç ve saniyelik hız güncellendi.');return;
  }
-
  if(!confirm('Kasa hareketi silinsin mi?'))return;
-
- const old=balance(v.currency);
- const signed=v.type==='out'?-n(v.amount):n(v.amount);
-
- if(old-signed<-.00001){
-  toast('Bu hareket silinirse kasa bakiyesi negatif olur');
-  return;
- }
-
- db.vault.splice(i,1);
- save();
- renderAll();
- toast('Kasa hareketi silindi');
+ const old=balance(v.currency),signed=v.type==='out'?-n(v.amount):n(v.amount);
+ if(old-signed<-.00001){toast('Bu hareket silinirse kasa bakiyesi negatif olur');return}
+ db.vault.splice(i,1);save();renderAll();toast('Kasa hareketi silindi');
 }
-
 function editVault(i){
- const v=db.vault[i];
- if(!v)return;
-
- if(v.source==='debtPayment'||v.source==='accrual'){
-  toast('Otomatik kayıtlar doğrudan düzenlenemez');
-  return;
- }
-
- const amount=prompt('Yeni tutar',v.amount);
- if(amount===null)return;
-
- const x=n(amount);
- if(x<=0){
-  toast('Tutar geçersiz');
-  return;
- }
-
- const note=prompt('Açıklama',v.note||'');
- if(note===null)return;
-
- const old=v.type==='out'?-v.amount:v.amount;
- const neu=v.type==='out'?-x:x;
-
- if(balance(v.currency)-old+neu<-.00001){
-  toast('Bakiye negatife düşer');
-  return;
- }
-
- v.amount=x;
- v.note=note;
- save();
- renderAll();
+ const v=db.vault[i];if(!v)return;
+ if(v.source==='debtPayment'||v.source==='accrual'){toast('Otomatik kayıtlar doğrudan düzenlenemez');return}
+ const amount=prompt('Yeni tutar',v.amount);if(amount===null)return;
+ const x=n(amount);if(x<=0){toast('Tutar geçersiz');return}
+ const note=prompt('Açıklama',v.note||'');if(note===null)return;
+ const old=v.type==='out'?-v.amount:v.amount,neu=v.type==='out'?-x:x;
+ if(balance(v.currency)-old+neu<-.00001){toast('Bakiye negatife düşer');return}
+ v.amount=x;v.note=note;save();renderAll();
 }
-
 function applyVaultToDebt(i){
  const v=db.vault[i];
- if(!v||v.type!=='in'||v.source==='debtPayment'){
-  toast('Bu kayıt borç ödemesinde kullanılamaz');
-  return;
- }
-
- const f=db.finance;
- const available=balance(v.currency);
-
- if(available<n(v.amount)){
-  toast('Bu para kasada artık mevcut değil');
-  return;
- }
-
+ if(!v||v.type!=='in'||v.source==='debtPayment'){toast('Bu kayıt borç ödemesinde kullanılamaz');return}
+ const f=db.finance,available=balance(v.currency);
+ if(available<n(v.amount)){toast('Bu para kasada artık mevcut değil');return}
  const payment=fromTRY(tryValue(v.amount,v.currency),f.currency);
-
- if(payment<=0){
-  toast('Gerekli döviz kuru henüz alınmadı');
-  return;
- }
-
- const current=remaining();
- const actual=Math.min(current,payment);
-
- if(actual<=0){
-  toast('Ödenecek borç kalmamış');
-  return;
- }
-
+ if(payment<=0){toast('Gerekli döviz kuru henüz alınmadı');return}
+ const current=remaining(),actual=Math.min(current,payment);
+ if(actual<=0){toast('Ödenecek borç kalmamış');return}
  const cashDeduction=fromTRY(tryValue(actual,f.currency),v.currency);
-
- if(cashDeduction<=0||cashDeduction>available+0.000001){
-  toast('Dönüşüm veya kasa bakiyesi yetersiz');
-  return;
- }
-
- if(!confirm(
-  money(actual,f.currency)+' borçtan düşülsün mü?\n'+
-  'Kasadan '+money(cashDeduction,v.currency)+' çıkacak.'
- ))return;
-
- f.remaining=Math.max(0,current-actual);
- f.lastAccrual=Date.now();
- f.extraPaid=n(f.extraPaid)+actual;
-
- db.vault.unshift({
-  id:uid(),type:'out',amount:cashDeduction,
-  currency:v.currency,
-  note:'Borç ödemesi: '+money(actual,f.currency),
-  date:Date.now(),source:'debtPayment'
- });
-
- db.extraHistory.unshift({
-  id:uid(),amount:actual,currency:f.currency,
-  cashAmount:cashDeduction,cashCurrency:v.currency,
-  date:Date.now(),note:'Kasadan borca aktarıldı'
- });
-
- save();
- renderAll();
- toast('Borç ödemesi yapıldı. Hız yeniden hesaplandı.');
+ if(cashDeduction<=0||cashDeduction>available+0.000001){toast('Dönüşüm veya kasa bakiyesi yetersiz');return}
+ if(!confirm(money(actual,f.currency)+' borçtan düşülsün mü?\nKasadan '+money(cashDeduction,v.currency)+' çıkacak.'))return;
+ f.remaining=Math.max(0,current-actual);f.lastAccrual=Date.now();f.extraPaid=n(f.extraPaid)+actual;
+ db.vault.unshift({id:uid(),type:'out',amount:cashDeduction,currency:v.currency,note:'Borç ödemesi: '+money(actual,f.currency),date:Date.now(),source:'debtPayment'});
+ db.extraHistory.unshift({id:uid(),amount:actual,currency:f.currency,cashAmount:cashDeduction,cashCurrency:v.currency,date:Date.now(),note:'Kasadan borca aktarıldı'});
+ save();renderAll();toast('Borç ödemesi yapıldı. Hız yeniden hesaplandı.');
 }
-
 function esc(s){
- return String(s??'').replace(/[&<>"']/g,c=>({
-  '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
- }[c]));
+ return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 }
-
 function renderVault(){
  const e=el('vaultList');
-
- if(!db.vault.length){
-  e.innerHTML='<div class="empty">Henüz kasa hareketi yok.</div>';
-  return;
- }
-
+ if(!db.vault.length){e.innerHTML='<div class="empty">Henüz kasa hareketi yok.</div>';return}
  e.innerHTML=db.vault.slice(0,60).map((v,i)=>`
-  <div class="item">
-   <div>
-    <div class="name">${esc(v.note||'Kasa hareketi')}</div>
-    <div class="detail">${new Date(v.date).toLocaleString('tr-TR')} · ${v.currency}</div>
-    ${v.source==='accrual'?'<div class="detail" style="color:#b04ba5">Geri alınabilir aktarım</div>':''}
-   </div>
-   <div>
-    <div class="amount">${v.type==='out'?'−':'+'}${money(v.amount,v.currency)}</div>
-    <div class="detail">${usdText(v.amount,v.currency)}</div>
-    <div class="actions">
-     ${v.type==='in'&&v.source!=='debtPayment'?`<button class="btn good mini" onclick="applyVaultToDebt(${i})">Borçtan düş</button>`:''}
-     <button class="btn mini" onclick="editVault(${i})">Düzenle</button>
-     <button class="btn danger mini" onclick="deleteVault(${i})">${v.source==='accrual'?'Geri al':'Sil'}</button>
-    </div>
-   </div>
-  </div>
- `).join('');
+ <div class="item"><div><div class="name">${esc(v.note||'Kasa hareketi')}</div><div class="detail">${new Date(v.date).toLocaleString('tr-TR')} · ${v.currency}</div>${v.source==='accrual'?'<div class="detail" style="color:#b04ba5">Geri alınabilir aktarım</div>':''}</div>
+ <div><div class="amount">${v.type==='out'?'−':'+'}${money(v.amount,v.currency)}</div><div class="detail">${usdText(v.amount,v.currency)}</div><div class="actions">
+ ${v.type==='in'&&v.source!=='debtPayment'?`<button class="btn good mini" onclick="applyVaultToDebt(${i})">Borçtan düş</button>`:''}
+ <button class="btn mini" onclick="editVault(${i})">Düzenle</button>
+ <button class="btn danger mini" onclick="deleteVault(${i})">${v.source==='accrual'?'Geri al':'Sil'}</button></div></div></div>`).join('');
 }
 
-/* ÖDEME VE HATIRLATMALAR */
+/* ÖDEME VE HATIRLATMA */
 
+function recordTime(r){
+ const v=r.due||'';
+ if(/^\d{4}-\d{2}-\d{2}$/.test(v))return new Date(v+'T23:59:59').getTime();
+ return new Date(v).getTime();
+}
 function addRecord(){
- const name=el('rName').value.trim();
- const due=el('rDue').value;
-
- if(!name||!due){
-  toast('Kayıt adı ve tarih gerekli');
-  return;
- }
-
- db.records.push({
-  id:uid(),name,
-  amount:Math.max(0,n(el('rAmount').value)),
-  currency:db.finance.currency,
-  due,
-  type:el('rType').value,
-  repeat:el('rRepeat').value,
-  note:el('rNote').value.trim(),
-  done:false
- });
-
+ const name=el('rName').value.trim(),due=el('rDue').value;
+ if(!name||!due){toast('Kayıt adı ve tarih gerekli');return}
+ db.records.push({id:uid(),name,amount:Math.max(0,n(el('rAmount').value)),currency:db.finance.currency,due,type:el('rType').value,repeat:el('rRepeat').value,note:el('rNote').value.trim(),done:false});
  ['rName','rAmount','rDue','rNote'].forEach(k=>el(k).value='');
- save();
- renderRecords();
- toast('Kayıt eklendi');
+ save();renderRecords();toast('Kayıt eklendi');
 }
-
 function setFilter(f,b){
- filter=f;
- document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
- b.classList.add('active');
- renderRecords();
+ filter=f;document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));b.classList.add('active');renderRecords();
 }
-
 function nextDue(r){
- const d=new Date(r.due+'T12:00:00');
+ let d=new Date(recordTime(r));
+ if(!Number.isFinite(d.getTime()))return r.due;
  const day=d.getDate();
-
  if(r.repeat==='monthly'){
-  d.setDate(1);
-  d.setMonth(d.getMonth()+1);
+  d.setDate(1);d.setMonth(d.getMonth()+1);
   d.setDate(Math.min(day,new Date(d.getFullYear(),d.getMonth()+1,0).getDate()));
- }else if(r.repeat==='yearly'){
-  d.setFullYear(d.getFullYear()+1);
- }
-
- return d.getFullYear()+'-'+
-  String(d.getMonth()+1).padStart(2,'0')+'-'+
-  String(d.getDate()).padStart(2,'0');
+ }else if(r.repeat==='yearly')d.setFullYear(d.getFullYear()+1);
+ return toLocalInput(d);
 }
-
 function pay(rid){
- const i=db.records.findIndex(r=>r.id===rid);
- if(i<0)return;
-
+ const i=db.records.findIndex(r=>r.id===rid);if(i<0)return;
  const r=db.records[i];
  if(!confirm(r.name+' ödendi olarak işaretlensin mi?'))return;
-
- db.history.unshift({
-  id:uid(),name:r.name,amount:r.amount,
-  currency:r.currency,paidAt:Date.now()
- });
-
- if(r.repeat==='none'){
-  db.records.splice(i,1);
- }else{
-  let d=nextDue(r);
-  const today=new Date().toISOString().slice(0,10);
-  let guard=0;
-  while(d<today&&guard++<240)d=nextDue({...r,due:d});
+ db.history.unshift({id:uid(),name:r.name,amount:r.amount,currency:r.currency,paidAt:Date.now()});
+ if(r.repeat==='none')db.records.splice(i,1);
+ else{
+  let d=nextDue(r),guard=0;
+  while(new Date(recordTime({...r,due:d})).getTime()<Date.now()&&guard++<240)d=nextDue({...r,due:d});
   r.due=d;
  }
-
- save();
- renderRecords();
- renderHistory();
- toast('Ödeme geçmişe eklendi');
+ save();renderRecords();renderHistory();toast('Ödeme geçmişe eklendi');
 }
-
 function editRecord(rid){
- const r=db.records.find(x=>x.id===rid);
- if(!r)return;
-
- const name=prompt('Kayıt adı',r.name);
- if(name===null)return;
-
- const amount=prompt('Tutar',r.amount);
- if(amount===null)return;
-
- const due=prompt('Vade YYYY-AA-GG',r.due);
- if(due===null)return;
-
- if(!/^\d{4}-\d{2}-\d{2}$/.test(due)){
-  toast('Tarih biçimi geçersiz');
-  return;
- }
-
- r.name=name.trim()||r.name;
- r.amount=Math.max(0,n(amount));
- r.due=due;
-
- save();
- renderRecords();
+ const r=db.records.find(x=>x.id===rid);if(!r)return;
+ const name=prompt('Kayıt adı',r.name);if(name===null)return;
+ const amount=prompt('Tutar',r.amount);if(amount===null)return;
+ const due=prompt('Vade YYYY-AA-GGTHH:DD',r.due);if(due===null)return;
+ if(!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/.test(due)&&!/^\d{4}-\d{2}-\d{2}$/.test(due)){toast('Tarih biçimi geçersiz');return}
+ r.name=name.trim()||r.name;r.amount=Math.max(0,n(amount));r.due=due;
+ save();renderRecords();
 }
-
 function deleteRecord(rid){
  if(!confirm('Kayıt silinsin mi?'))return;
- db.records=db.records.filter(x=>x.id!==rid);
- save();
- renderRecords();
+ db.records=db.records.filter(x=>x.id!==rid);save();renderRecords();
 }
-
 function renderRecords(){
  const e=el('recordList');
- const now=new Date();
- const today=new Date(now.getFullYear(),now.getMonth(),now.getDate());
-
- let a=db.records.filter(r=>
-  filter==='all'||
-  (filter==='late'&&new Date(r.due+'T00:00:00')<today)||
-  r.type===filter
- );
-
- a.sort((x,y)=>x.due.localeCompare(y.due));
-
- if(!a.length){
-  e.innerHTML='<div class="empty">Bu bölümde kayıt yok.</div>';
-  return;
- }
-
+ let a=db.records.filter(r=>filter==='all'||(filter==='late'&&recordTime(r)<Date.now())||r.type===filter);
+ a.sort((x,y)=>recordTime(x)-recordTime(y));
+ if(!a.length){e.innerHTML='<div class="empty">Bu bölümde kayıt yok.</div>';return}
  e.innerHTML=a.map(r=>{
-  const late=new Date(r.due+'T00:00:00')<today;
-  return `
-   <div class="item">
-    <div>
-     <div class="name">${esc(r.name)} ${late?'<small style="color:#d47777">GECİKTİ</small>':''}</div>
-     <div class="detail">
-      ${new Date(r.due+'T00:00:00').toLocaleDateString('tr-TR')} ·
-      ${r.type==='payment'?'Ödeme':'Hatırlatma'} ·
-      ${r.repeat==='none'?'Tek sefer':r.repeat==='monthly'?'Aylık':'Yıllık'}
-     </div>
-    </div>
-    <div>
-     <div class="amount">${money(r.amount,r.currency)}</div>
-     <div class="actions">
-      ${r.type==='payment'?`<button class="btn good mini" onclick="pay('${r.id}')">Ödendi</button>`:''}
-      <button class="btn mini" onclick="editRecord('${r.id}')">Düzenle</button>
-      <button class="btn danger mini" onclick="deleteRecord('${r.id}')">Sil</button>
-     </div>
-    </div>
-   </div>
-  `;
+  const late=recordTime(r)<Date.now();
+  return `<div class="item"><div><div class="name">${esc(r.name)} ${late?'<small style="color:#d47777">GECİKTİ</small>':''}</div>
+  <div class="detail">${formatDateTime(r.due)} · ${r.type==='payment'?'Ödeme':'Hatırlatma'} · ${r.repeat==='none'?'Tek sefer':r.repeat==='monthly'?'Aylık':'Yıllık'}</div></div>
+  <div><div class="amount">${money(r.amount,r.currency)}</div><div class="actions">
+  ${r.type==='payment'?`<button class="btn good mini" onclick="pay('${r.id}')">Ödendi</button>`:''}
+  <button class="btn mini" onclick="editRecord('${r.id}')">Düzenle</button>
+  <button class="btn danger mini" onclick="deleteRecord('${r.id}')">Sil</button></div></div></div>`;
  }).join('');
 }
-
 function renderHistory(){
  const e=el('historyList');
-
- if(!db.history.length){
-  e.innerHTML='<div class="empty">Henüz ödeme geçmişi yok.</div>';
-  return;
- }
-
+ if(!db.history.length){e.innerHTML='<div class="empty">Henüz ödeme geçmişi yok.</div>';return}
  e.innerHTML=db.history.slice(0,40).map((h,i)=>`
-  <div class="item">
-   <div>
-    <div class="name">${esc(h.name)}</div>
-    <div class="detail">${new Date(h.paidAt).toLocaleString('tr-TR')}</div>
-   </div>
-   <div>
-    <div class="amount">${money(h.amount,h.currency)}</div>
-    <div class="actions">
-     <button class="btn mini" onclick="editHistory(${i})">Düzenle</button>
-     <button class="btn danger mini" onclick="deleteHistory(${i})">Sil</button>
-    </div>
-   </div>
-  </div>
- `).join('');
+ <div class="item"><div><div class="name">${esc(h.name)}</div><div class="detail">${new Date(h.paidAt).toLocaleString('tr-TR')}</div></div>
+ <div><div class="amount">${money(h.amount,h.currency)}</div><div class="actions">
+ <button class="btn mini" onclick="editHistory(${i})">Düzenle</button>
+ <button class="btn danger mini" onclick="deleteHistory(${i})">Sil</button></div></div></div>`).join('');
 }
-
 function editHistory(i){
- const h=db.history[i];
- if(!h)return;
-
- const name=prompt('Ödeme adı',h.name);
- if(name===null)return;
-
- const amount=prompt('Tutar',h.amount);
- if(amount===null)return;
-
- h.name=name;
- h.amount=Math.max(0,n(amount));
- save();
- renderHistory();
+ const h=db.history[i];if(!h)return;
+ const name=prompt('Ödeme adı',h.name);if(name===null)return;
+ const amount=prompt('Tutar',h.amount);if(amount===null)return;
+ h.name=name;h.amount=Math.max(0,n(amount));save();renderHistory();
 }
-
 function deleteHistory(i){
  if(!confirm('Geçmiş kaydı silinsin mi?'))return;
- db.history.splice(i,1);
- save();
- renderHistory();
+ db.history.splice(i,1);save();renderHistory();
 }
-
 function renderExtraHistory(){
  const e=el('extraHistory');
-
- if(!db.extraHistory.length){
-  e.innerHTML='<div class="empty">Henüz ekstra borç ödemesi yok.</div>';
-  return;
- }
-
+ if(!db.extraHistory.length){e.innerHTML='<div class="empty">Henüz ekstra borç ödemesi yok.</div>';return}
  e.innerHTML=db.extraHistory.slice(0,40).map(x=>`
-  <div class="item">
-   <div>
-    <div class="name">Ekstra borç ödemesi</div>
-    <div class="detail">${new Date(x.date).toLocaleString('tr-TR')} · Kasadan ödendi</div>
-   </div>
-   <div>
-    <div class="amount">${money(x.amount,x.currency)}</div>
-    <div class="detail">Kasa: ${money(x.cashAmount,x.cashCurrency)}</div>
-   </div>
-  </div>
- `).join('');
+ <div class="item"><div><div class="name">Ekstra borç ödemesi</div><div class="detail">${new Date(x.date).toLocaleString('tr-TR')} · Kasadan ödendi</div></div>
+ <div><div class="amount">${money(x.amount,x.currency)}</div><div class="detail">Kasa: ${money(x.cashAmount,x.cashCurrency)}</div></div></div>`).join('');
 }
 
 /* GRAFİKLER */
 
 function drawCharts(){
- const f=db.finance;
- const r=remaining();
-
- drawLine(
-  'financeChart',
-  [n(f.initial),Math.max(0,(n(f.initial)+r)/2),r,0],
-  ['Başlangıç','Ara','Şimdi','Hedef'],
-  '#b04ba5'
- );
-
- const c=f.currency;
- const values=[0];
- let sum=0;
-
- db.vault.slice().reverse().filter(x=>x.currency===c).forEach(x=>{
-  sum+=x.type==='out'?-n(x.amount):n(x.amount);
-  values.push(sum);
- });
-
+ const f=db.finance,r=remaining();
+ drawLine('financeChart',[n(f.initial),Math.max(0,(n(f.initial)+r)/2),r,0],['Başlangıç','Ara','Şimdi','Hedef'],'#b04ba5');
+ const c=f.currency,values=[0];let sum=0;
+ db.vault.slice().reverse().filter(x=>x.currency===c).forEach(x=>{sum+=x.type==='out'?-n(x.amount):n(x.amount);values.push(sum)});
  const v=values.slice(-12);
  drawLine('vaultChart',v,v.map((_,i)=>String(i+1)),'#27a8e8');
 }
-
 function drawLine(canvasId,values,labels,color){
- const canvas=el(canvasId);
- if(!canvas)return;
-
- const ratio=window.devicePixelRatio||1;
- const width=canvas.clientWidth||300;
- const height=165;
-
- canvas.width=width*ratio;
- canvas.height=height*ratio;
-
- const ctx=canvas.getContext('2d');
- ctx.setTransform(ratio,0,0,ratio,0,0);
-
- const p=22;
- const max=Math.max(1,...values);
- const min=Math.min(0,...values);
- const range=Math.max(1,max-min);
-
- ctx.clearRect(0,0,width,height);
- ctx.strokeStyle='#eee';
-
- for(let i=0;i<4;i++){
-  const y=p+(height-p*2)*i/3;
-  ctx.beginPath();
-  ctx.moveTo(p,y);
-  ctx.lineTo(width-p,y);
-  ctx.stroke();
- }
-
+ const canvas=el(canvasId);if(!canvas)return;
+ const ratio=window.devicePixelRatio||1,width=canvas.clientWidth||300,height=165;
+ canvas.width=width*ratio;canvas.height=height*ratio;
+ const ctx=canvas.getContext('2d');ctx.setTransform(ratio,0,0,ratio,0,0);
+ const p=22,max=Math.max(1,...values),min=Math.min(0,...values),range=Math.max(1,max-min);
+ ctx.clearRect(0,0,width,height);ctx.strokeStyle='#eee';
+ for(let i=0;i<4;i++){const y=p+(height-p*2)*i/3;ctx.beginPath();ctx.moveTo(p,y);ctx.lineTo(width-p,y);ctx.stroke()}
  if(values.length<2)return;
-
- const points=values.map((v,i)=>({
-  x:p+(width-p*2)*i/(values.length-1),
-  y:height-p-(v-min)/range*(height-p*2)
- }));
-
- ctx.beginPath();
- points.forEach((q,i)=>i?ctx.lineTo(q.x,q.y):ctx.moveTo(q.x,q.y));
- ctx.lineTo(points[points.length-1].x,height-p);
- ctx.lineTo(points[0].x,height-p);
- ctx.closePath();
-
+ const points=values.map((v,i)=>({x:p+(width-p*2)*i/(values.length-1),y:height-p-(v-min)/range*(height-p*2)}));
+ ctx.beginPath();points.forEach((q,i)=>i?ctx.lineTo(q.x,q.y):ctx.moveTo(q.x,q.y));
+ ctx.lineTo(points[points.length-1].x,height-p);ctx.lineTo(points[0].x,height-p);ctx.closePath();
  const gradient=ctx.createLinearGradient(0,0,0,height);
  gradient.addColorStop(0,color==='#27a8e8'?'rgba(39,168,232,.2)':'rgba(176,75,165,.2)');
  gradient.addColorStop(1,'rgba(176,75,165,0)');
-
- ctx.fillStyle=gradient;
- ctx.fill();
-
- ctx.beginPath();
- points.forEach((q,i)=>i?ctx.lineTo(q.x,q.y):ctx.moveTo(q.x,q.y));
- ctx.strokeStyle=color;
- ctx.lineWidth=2;
- ctx.lineJoin='round';
- ctx.stroke();
-
+ ctx.fillStyle=gradient;ctx.fill();
+ ctx.beginPath();points.forEach((q,i)=>i?ctx.lineTo(q.x,q.y):ctx.moveTo(q.x,q.y));
+ ctx.strokeStyle=color;ctx.lineWidth=2;ctx.lineJoin='round';ctx.stroke();
  points.forEach((q,i)=>{
-  ctx.beginPath();
-  ctx.arc(q.x,q.y,3,0,Math.PI*2);
-  ctx.fillStyle=color;
-  ctx.fill();
-
-  ctx.fillStyle='#999';
-  ctx.font='10px Arial';
-  ctx.textAlign='center';
-  ctx.fillText(labels[i]||'',q.x,height-4);
+  ctx.beginPath();ctx.arc(q.x,q.y,3,0,Math.PI*2);ctx.fillStyle=color;ctx.fill();
+  ctx.fillStyle='#999';ctx.font='10px Arial';ctx.textAlign='center';ctx.fillText(labels[i]||'',q.x,height-4);
  });
 }
 
-/* YEDEKLEME VE DIŞA AKTARMA */
+/* YEDEKLEME */
 
 function backup(){
  const blob=new Blob([JSON.stringify(db,null,2)],{type:'application/json'});
- const a=document.createElement('a');
- a.href=URL.createObjectURL(blob);
+ const a=document.createElement('a');a.href=URL.createObjectURL(blob);
  a.download='enpara-timepanel-yedek-'+new Date().toISOString().slice(0,10)+'.json';
- a.click();
- setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+ a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);
 }
-
 function restore(event){
- const file=event.target.files[0];
- if(!file)return;
-
+ const file=event.target.files[0];if(!file)return;
  const reader=new FileReader();
-
  reader.onload=()=>{
   try{
    const x=JSON.parse(reader.result);
-
-   if(!x||typeof x!=='object'||!x.finance||
-    !Array.isArray(x.vault)||!Array.isArray(x.records)||
-    !Array.isArray(x.history))throw Error();
-
+   if(!x||typeof x!=='object'||!x.finance||!Array.isArray(x.vault)||!Array.isArray(x.records)||!Array.isArray(x.history))throw Error();
    const d=defaults();
-
-   db={
-    ...d,...x,
-    finance:{...d.finance,...x.finance},
-    vault:x.vault,
-    records:x.records,
-    history:x.history,
-    extraHistory:Array.isArray(x.extraHistory)?x.extraHistory:[],
-    rate:{...d.rate,...(x.rate||{})}
-   };
-
-   save();
-   renderAll();
-   toast('Yedek geri yüklendi');
-  }catch(err){
-   toast('Yedek dosyası geçersiz');
-  }
+   db={...d,...x,finance:{...d.finance,...x.finance},vault:x.vault,records:x.records,history:x.history,extraHistory:Array.isArray(x.extraHistory)?x.extraHistory:[],rate:{...d.rate,...(x.rate||{})}};
+   if(/^\d{4}-\d{2}-\d{2}$/.test(db.finance.target||''))db.finance.target+='T23:59';
+   save();renderAll();toast('Yedek geri yüklendi');
+  }catch(err){toast('Yedek dosyası geçersiz')}
  };
-
- reader.readAsText(file);
- event.target.value='';
+ reader.readAsText(file);event.target.value='';
 }
-
 function exportCSV(){
- const rows=[
-  ['Tür','Ad','Tutar','Para Birimi','Tarih'],
-  ...db.history.map(x=>['Ödeme',x.name,x.amount,x.currency,new Date(x.paidAt).toISOString()]),
-  ...db.records.map(x=>[x.type,x.name,x.amount,x.currency,x.due]),
-  ...db.extraHistory.map(x=>['Ekstra borç ödemesi',x.note||'Kasadan borca',x.amount,x.currency,new Date(x.date).toISOString()])
- ];
-
- const csv=rows.map(row=>
-  row.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(';')
- ).join('\n');
-
- const a=document.createElement('a');
- a.href=URL.createObjectURL(new Blob(['\ufeff'+csv],{
-  type:'text/csv;charset=utf-8'
- }));
- a.download='enpara-kayitlar.csv';
- a.click();
- setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+ const rows=[['Tür','Ad','Tutar','Para Birimi','Tarih'],
+ ...db.history.map(x=>['Ödeme',x.name,x.amount,x.currency,new Date(x.paidAt).toISOString()]),
+ ...db.records.map(x=>[x.type,x.name,x.amount,x.currency,x.due]),
+ ...db.extraHistory.map(x=>['Ekstra borç ödemesi',x.note||'Kasadan borca',x.amount,x.currency,new Date(x.date).toISOString()])];
+ const csv=rows.map(row=>row.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(';')).join('\n');
+ const a=document.createElement('a');a.href=URL.createObjectURL(new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8'}));
+ a.download='enpara-kayitlar.csv';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);
 }
-
 function resetApp(){
  if(!confirm('Tüm uygulama verileri silinsin mi?'))return;
-
- db=defaults();
- save();
- localStorage.removeItem(LAST_KEY);
- renderAll();
- toast('Uygulama sıfırlandı');
+ db=defaults();save();localStorage.removeItem(LAST_KEY);renderAll();toast('Uygulama sıfırlandı');
 }
 
 /* UYGULAMADAN UZAKTA GEÇEN SÜRE */
 
 function formatDuration(milliseconds){
  const seconds=Math.max(0,Math.floor(milliseconds/1000));
-
  if(seconds<60)return seconds+' saniye';
-
  const minutes=Math.floor(seconds/60);
  if(minutes<60)return minutes+' dakika';
-
  const hours=Math.floor(minutes/60);
  if(hours<24)return hours+' saat '+(minutes%60)+' dakika';
-
  const days=Math.floor(hours/24);
  return days+' gün '+(hours%24)+' saat';
 }
-
 function updateLastSeen(){
- try{
-  localStorage.setItem(LAST_KEY,String(Date.now()));
- }catch(e){}
+ try{localStorage.setItem(LAST_KEY,String(Date.now()))}catch(e){}
 }
-
 function showAwayTime(){
- let last=0;
-
- try{
-  last=n(localStorage.getItem(LAST_KEY));
- }catch(e){}
-
+ let last=0;try{last=n(localStorage.getItem(LAST_KEY))}catch(e){}
  const now=Date.now();
-
  if(last>0&&now-last>15000){
   const elapsed=now-last;
-
-  const debtAtLast=Math.max(
-   0,
-   n(db.finance.remaining)-accruedAt(last)
-  );
-
+  const debtAtLast=Math.max(0,n(db.finance.remaining)-accruedAt(last));
   const debtNow=remaining();
   const reducedWhileAway=Math.max(0,debtAtLast-debtNow);
-
-  toast(
-   'Siz yokken '+formatDuration(elapsed)+' geçti. '+
-   money(reducedWhileAway,db.finance.currency)+' borç azaldı.'
-  );
+  toast('Siz yokken '+formatDuration(elapsed)+' geçti. '+money(reducedWhileAway,db.finance.currency)+' borç azaldı.');
  }
-
  updateLastSeen();
 }
 
-/* TÜM EKRANLARI YENİLE */
+/* EKRAN YENİLEME */
 
 function renderAll(){
- renderRate();
- updateUI();
- renderVault();
- renderRecords();
- renderHistory();
- renderExtraHistory();
- fillFinance();
- drawCharts();
+ renderRate();updateUI();renderVault();renderRecords();renderHistory();renderExtraHistory();fillFinance();drawCharts();
 }
-
 function tick(){
  const now=Date.now();
-
  el('clock').textContent=new Date().toLocaleString('tr-TR');
-
  updateUI();
-
- if(now-lastChartAt>15000){
-  lastChartAt=now;
-  drawCharts();
- }
-
- if(!tick.last||now-tick.last>10000){
-  tick.last=now;
-  renderRecords();
- }
+ if(now-lastChartAt>15000){lastChartAt=now;drawCharts()}
+ if(!tick.last||now-tick.last>10000){tick.last=now;renderRecords()}
 }
-
-/* AKICI SAYAÇ
-   requestAnimationFrame, ekran yenileme hızına göre güncelleme yapar.
-   Borç hesabı gerçek saat üzerinden olduğu için takılma olsa bile
-   toplam hesaplama doğruluğu kaybolmaz.
-*/
-
 let frameCounter=0;
-
 function smoothCounter(){
  updateUI();
-
  frameCounter++;
- if(frameCounter%60===0){
-  save();
- }
-
+ if(frameCounter%60===0)save();
  requestAnimationFrame(smoothCounter);
 }
 
-/* BAŞLATMA */
+/* BAŞLAT */
 
 renderAll();
 showAwayTime();
 connectRate();
-
 requestAnimationFrame(smoothCounter);
 setInterval(tick,1000);
 
 document.addEventListener('visibilitychange',()=>{
- if(document.hidden){
-  updateLastSeen();
- }else{
-  showAwayTime();
-  renderAll();
- }
+ if(document.hidden)updateLastSeen();
+ else{showAwayTime();renderAll()}
 });
-
 window.addEventListener('pagehide',updateLastSeen);
-
-window.addEventListener('pageshow',()=>{
- showAwayTime();
- renderAll();
-});
-
+window.addEventListener('pageshow',()=>{showAwayTime();renderAll()});
 window.addEventListener('resize',()=>{
- clearTimeout(window.resizeTimer);
- window.resizeTimer=setTimeout(drawCharts,150);
+ clearTimeout(window.resizeTimer);window.resizeTimer=setTimeout(drawCharts,150);
 });
-
 window.addEventListener('online',connectRate);
-
 window.addEventListener('beforeunload',()=>{
- updateLastSeen();
- manualClose=true;
- clearTimeout(reconnectTimer);
+ updateLastSeen();manualClose=true;clearTimeout(reconnectTimer);
  if(socket)socket.close();
 });
-
 </script>
 </body>
 </html>
